@@ -13,9 +13,9 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.tl_connect.dev.modules.enroll.entity.StudentCourseClass;
+import com.tl_connect.dev.modules.enroll.projection.ScheduleIntervalRow;
 import com.tl_connect.dev.modules.enroll.projection.StudentCourseClassRow;
 import com.tl_connect.dev.shared.common.enums.StudentCourseClassStatus;
-import com.tl_connect.dev.shared.datastructure.intervaltree.ScheduleInterval;
 
 
 @Repository
@@ -94,18 +94,14 @@ public interface StudentCourseClassRepository extends JpaRepository<StudentCours
         AND scc.semester_id = :semesterId
         AND scc.status IN ('PENDING', 'ENROLLED')
         """, nativeQuery = true)
-    List<ScheduleInterval> findCurrentSchedule(
+    List<ScheduleIntervalRow> findCurrentSchedule(
         @Param("studentId") Long studentId,
         @Param("semesterId") Long semesterId
     );
 
     @Modifying
-    @Query("UPDATE StudentCourseClass scc SET scc.status = :toStatus WHERE scc.semesterId = :semesterId AND scc.status = :fromStatus")
-    void updateStatusBySemesterId(
-        @Param("semesterId") Long semesterId,
-        @Param("fromStatus") StudentCourseClassStatus fromStatus,
-        @Param("toStatus") StudentCourseClassStatus toStatus
-    );
+    @Query("UPDATE StudentCourseClass scc SET scc.status = 'ENROLLED' WHERE scc.semesterId = :semesterId AND scc.status = 'PENDING'")
+    void updateStatusEnrolledBySemesterId(@Param("semesterId") Long semesterId);
 
     @Query(value = """
             SELECT 
@@ -161,4 +157,13 @@ public interface StudentCourseClassRepository extends JpaRepository<StudentCours
     );
 
     List<StudentCourseClass> findByCourseClassId(Long courseClassId);
+
+    @Query(value = """
+            SELECT EXISTS (
+                SELECT 1
+                FROM student_course_classes scc
+                WHERE scc.student_id = :studentId AND scc.course_class_id = :courseClassId
+            )
+            """, nativeQuery = true)
+    boolean existedByStudentIdAndClassId(@Param("studentId") Long studentId, @Param("courseClassId") Long courseClassId);
 }

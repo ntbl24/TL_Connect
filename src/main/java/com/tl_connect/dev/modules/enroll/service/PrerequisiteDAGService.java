@@ -10,7 +10,7 @@ import com.tl_connect.dev.modules.enroll.dto.dag.PrerequisiteGroup;
 import com.tl_connect.dev.modules.subject.projection.PrerequisiteRow;
 import com.tl_connect.dev.modules.enroll.dto.dag.SubjectNode;
 import com.tl_connect.dev.modules.subject.service.interfaces.SubjectService;
-import com.tl_connect.dev.shared.common.ultility.CacheHelper;
+import com.tl_connect.dev.shared.ultility.CacheHelper;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -21,19 +21,19 @@ import lombok.extern.slf4j.Slf4j;
 public class PrerequisiteDAGService {
 
     private final SubjectService subjectService;
-    private final CacheHelper cacheHelperHelper;
+    private final CacheHelper cacheHelper;
 
     private static final String DAG_CACHE_KEY = "prereq:dag";
 
     public Map<Long, SubjectNode> getDAG() {
-        return cacheHelperHelper.getOrSet(DAG_CACHE_KEY, new TypeReference<Map<Long, SubjectNode>>() {}, () -> {
+        return cacheHelper.getOrSet(DAG_CACHE_KEY, new TypeReference<Map<Long, SubjectNode>>() {}, () -> {
             List<PrerequisiteRow> rows = subjectService.findAllPrerequisiteRows();
             return buildDAG(rows);
         });
     }
 
     public void invalidateDAG() {
-        cacheHelperHelper.evict(DAG_CACHE_KEY);
+        cacheHelper.evict(DAG_CACHE_KEY);
     }
 
     private Map<Long, SubjectNode> buildDAG(List<PrerequisiteRow> rows) {

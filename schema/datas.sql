@@ -52,44 +52,44 @@ TRUNCATE TABLE
 RESTART IDENTITY CASCADE;
 
 -- oauth_users
-INSERT INTO oauth_users (id, user_uuid, display_name, email)
+INSERT INTO oauth_users (user_uuid, display_name, email)
 VALUES
-(1,'1deb00a9-835c-4ab7-a50f-57c12a56c7bd', 'Lê Việt Hoàng', 'nhokthanh3211@gmail.com'),
-(2,'a65d03d4-6a2a-426f-963d-8dca24399b83', 'Nguyễn Ngọc Anh', 'a45045@thanglong.edu.vn'),
-(3,'4a43cbd4-f3c6-4f5e-8db3-5b3aa1ef7369', 'Phùng Thanh Độ', 'a45044@thanglong.edu.vn'),
-(4,'uuid-4','Phạm Quang Huy','a45123@thanglong.edu.vn'),
-(5,'uuid-5','Hoàng Thu Hà','a45124@thanglong.edu.vn'),
-(6,'uuid-6','Đỗ Minh Tuấn','a45125@thanglong.edu.vn'),
-(7,'uuid-7','Nguyễn Thị Lan Anh','a45126@thanglong.edu.vn'),
-(8,'uuid-8','Trần Quốc Bảo','a45127@thanglong.edu.vn'),
-(9,'uuid-9','Lê Hoàng Nam','a45128@thanglong.edu.vn'),
-(10,'uuid-10','Phạm Gia Khánh','a45129@thanglong.edu.vn'),
-(11,'uuid-11','Nguyễn Hoàng Long','a45130@thanglong.edu.vn'),
-(12,'uuid-12','Trần Minh Tuấn','a45131@thanglong.edu.vn'),
-(13,'uuid-13','Lê Thị Thu Trang','a45132@thanglong.edu.vn'),
-(14,'uuid-14','Phạm Đức Anh','a45133@thanglong.edu.vn'),
-(15,'uuid-15','Hoàng Ngọc Linh','a45134@thanglong.edu.vn'),
-(16,'uuid-16','Đỗ Quang Trung','a45135@thanglong.edu.vn'),
-(17,'uuid-17','Nguyễn Hải Đăng','a45136@thanglong.edu.vn'),
-(18,'uuid-18','Trần Thu Phương','a45137@thanglong.edu.vn'),
-(19,'uuid-19','Lê Quốc Khánh','a45138@thanglong.edu.vn'),
-(20,'uuid-20','Phạm Thùy Dương','a45139@thanglong.edu.vn'),
-(21,'uuid-21','Hoàng Minh Khang','a45140@thanglong.edu.vn'),
-(22,'uuid-22','Đỗ Thị Ngọc Anh','a45141@thanglong.edu.vn'),
-(23,'uuid-23','Nguyễn Đức Minh','minhnd@thanglong.edu.vn'),
-(24,'uuid-24','Hoàng Thu Hà','ha.hoang@thanglong.edu.vn'),
-(25,'uuid-25','Đỗ Minh Tuấn','tuan.do@thanglong.edu.vn'),
-(26,'uuid-26','Nguyễn Thị Lan Anh','lananh.nguyen@thanglong.edu.vn'),
-(27,'uuid-27','Trần Quốc Bảo','bao.tran@thanglong.edu.vn'),
-(28,'uuid-28','Lê Hoàng Nam','nam.le@thanglong.edu.vn'),
-(29,'uuid-29','Phạm Gia Khánh','khanh.pham@thanglong.edu.vn'),
-(30,'uuid-30','Trần Gia Bảo','a45149@thanglong.edu.vn');
+('uuid-1', 'Lê Việt Hoàng', 'a47123@thanglong.edu.vn'),
+('a65d03d4-6a2a-426f-963d-8dca24399b83', 'Nguyễn Ngọc Anh', 'a45045@thanglong.edu.vn'),
+('4a43cbd4-f3c6-4f5e-8db3-5b3aa1ef7369', 'Phùng Thanh Độ', 'a45044@thanglong.edu.vn'),
+('1deb00a9-835c-4ab7-a50f-57c12a56c7bd','Nguyễn Trần Bảo Long','nhokthanh3211@gmail.com'),
+('uuid-5','Hoàng Thu Hà','a45124@thanglong.edu.vn'),
+('uuid-6','Đỗ Minh Tuấn','a45125@thanglong.edu.vn'),
+('uuid-7','Nguyễn Thị Lan Anh','a45126@thanglong.edu.vn'),
+('uuid-8','Trần Quốc Bảo','a45127@thanglong.edu.vn'),
+('uuid-9','Lê Hoàng Nam','a45128@thanglong.edu.vn'),
+('uuid-10','Phạm Gia Khánh','a45129@thanglong.edu.vn'),
+('uuid-11','Nguyễn Hoàng Long','a45130@thanglong.edu.vn'),
+('uuid-12','Trần Minh Tuấn','a45131@thanglong.edu.vn'),
+('uuid-13','Lê Thị Thu Trang','a45132@thanglong.edu.vn'),
+('uuid-14','Phạm Đức Anh','a45133@thanglong.edu.vn'),
+('uuid-15','Hoàng Ngọc Linh','a45134@thanglong.edu.vn'),
+('uuid-16','Đỗ Quang Trung','a45135@thanglong.edu.vn'),
+('uuid-17','Nguyễn Hải Đăng','a45136@thanglong.edu.vn'),
+('uuid-18','Trần Thu Phương','a45137@thanglong.edu.vn'),
+('uuid-19','Lê Quốc Khánh','a45138@thanglong.edu.vn'),
+('uuid-20','Phạm Thùy Dương','a45139@thanglong.edu.vn'),
+('uuid-21','Hoàng Minh Khang','a45140@thanglong.edu.vn'),
+('uuid-22','Đỗ Thị Ngọc Anh','a45141@thanglong.edu.vn'),
+('uuid-23','Nguyễn Đức Minh','minhnd@thanglong.edu.vn'),
+('uuid-24','Hoàng Thu Hà','ha.hoang@thanglong.edu.vn'),
+('uuid-25','Đỗ Minh Tuấn','tuan.do@thanglong.edu.vn'),
+('uuid-26','Nguyễn Thị Lan Anh','lananh.nguyen@thanglong.edu.vn'),
+('uuid-27','Trần Quốc Bảo','bao.tran@thanglong.edu.vn'),
+('uuid-28','Lê Hoàng Nam','nam.le@thanglong.edu.vn'),
+('uuid-29','Phạm Gia Khánh','khanh.pham@thanglong.edu.vn'),
+('uuid-30','Trần Gia Bảo','a45149@thanglong.edu.vn');
 
 -- roles
-INSERT INTO roles (id, code, name) VALUES
-(1,'ADMIN', 'Administrator'),
-(2,'STUDENT', 'Student'),
-(3,'LECTURER', 'Lecturer');
+INSERT INTO roles (code, name) VALUES
+('ADMIN', 'Administrator'),
+('STUDENT', 'Student'),
+('LECTURER', 'Lecturer');
 
 -- user_roles
 INSERT INTO user_roles (oauth_user_id, role_id) VALUES
@@ -97,143 +97,143 @@ INSERT INTO user_roles (oauth_user_id, role_id) VALUES
 (3,3),(9,3),(10,3);
 
 -- faculties
-INSERT INTO faculties (id, faculty_code, faculty_name) VALUES
-(1,'CNTT','Công nghệ thông tin'),
-(2,'KTQL','Kinh tế - Quản lý'),
-(3,'KHSK','Khoa học sức khỏe'),
-(4,'KNN','Ngoại ngữ'),
-(5,'XHNV','Khoa học xã hội và nhân văn'),
-(6,'KDL','Du lịch'),
-(7,'KTT','Truyền thông đa phương tiện'),
-(8,'KAN','Âm nhạc ứng dụng'),
-(9,'PDT','Phòng đào tạo');
+INSERT INTO faculties (faculty_code, faculty_name) VALUES
+('CNTT','Công nghệ thông tin'),
+('KTQL','Kinh tế - Quản lý'),
+('KHSK','Khoa học sức khỏe'),
+('KNN','Ngoại ngữ'),
+('XHNV','Khoa học xã hội và nhân văn'),
+('KDL','Du lịch'),
+('KTT','Truyền thông đa phương tiện'),
+('KAN','Âm nhạc ứng dụng'),
+('PDT','Phòng đào tạo');
 
 
 -- departments
-INSERT INTO departments (id, faculty_id, department_code, department_name) VALUES
-(1,1,'TT','Toán Tin'),
-(2,1,'AI','Trí tuệ nhân tạo'),
-(3,2,'KT','Kế toán'),
-(4,2,'KDMK','Quản trị Kinh doanh & Marketing'),
-(5,4,'HQ','Ngôn ngữ Hàn Quốc'),
-(6,4,'TQ','Ngôn ngữ Trung Quốc'),
-(7,2,'LGC','Logistics và Quản lý Chuỗi cung ứng'),
-(8,4,'TA','Ngôn ngữ Anh'),
-(9,3,'GDT','Giáo dục Thể chất'),
-(10,2,'LE','Luật Kinh tế'),
-(11,4, 'GF', 'Ngôn ngữ Pháp');
+INSERT INTO departments (faculty_id, department_code, department_name) VALUES
+(1,'TT','Toán Tin'),
+(1,'AI','Trí tuệ nhân tạo'),
+(2,'KT','Kế toán'),
+(2,'KDMK','Quản trị Kinh doanh & Marketing'),
+(4,'HQ','Ngôn ngữ Hàn Quốc'),
+(4,'TQ','Ngôn ngữ Trung Quốc'),
+(2,'LGC','Logistics và Quản lý Chuỗi cung ứng'),
+(4,'TA','Ngôn ngữ Anh'),
+(3,'GDT','Giáo dục Thể chất'),
+(2,'LE','Luật Kinh tế'),
+(4, 'GF', 'Ngôn ngữ Pháp');
 
 -- majors
-INSERT INTO majors (id, major_code, major_name, faculty_id) VALUES
-(1,'TA','Trí tuệ nhân tạo',1),
-(2,'TI','Khoa học máy tính',1),
-(3,'TE','Mạng máy tính và truyền thông dữ liệu',1),
-(4,'TT','Hệ thống thông tin',1),
-(5,'IT','Công nghệ thông tin',1),
-(6,'EC','Thương mại điện tử',2),
-(7,'IE','Kinh tế quốc tế',2),
-(8,'EL','Luật kinh tế',2),
-(9,'MK','Marketing',2),
-(10,'AC','Kế toán',2),
-(11,'FN','Tài chính - Ngân hàng',2),
-(12,'LG','Logistics và Quản lí chuỗi cung ứng',2),
-(13,'BA','Quản trị kinh doanh',2),
-(14,'NU','Điều dưỡng',3),
-(15,'EN','Ngôn ngữ Anh',4),
-(16,'KR','Ngôn ngữ Hàn Quốc',4),
-(17,'CN','Ngôn ngữ Trung Quốc',4),
-(18,'JP','Ngôn ngữ Nhật',4),
-(19,'VN','Việt Nam học',5),
-(20,'TM','Quản trị và Du lịch - Lữ hành',6),
-(21,'HM','Quản trị khách sạn',6),
-(22,'MM','Truyền thông đa phương tiện',7),
-(23,'GD','Thiết kế đồ họa',7),
-(24,'VO','Thanh nhạc',8);
+INSERT INTO majors (major_code, major_name, faculty_id) VALUES
+('TA','Trí tuệ nhân tạo',1),
+('TI','Khoa học máy tính',1),
+('TE','Mạng máy tính và truyền thông dữ liệu',1),
+('TT','Hệ thống thông tin',1),
+('IT','Công nghệ thông tin',1),
+('EC','Thương mại điện tử',2),
+('IE','Kinh tế quốc tế',2),
+('EL','Luật kinh tế',2),
+('MK','Marketing',2),
+('AC','Kế toán',2),
+('FN','Tài chính - Ngân hàng',2),
+('LG','Logistics và Quản lí chuỗi cung ứng',2),
+('BA','Quản trị kinh doanh',2),
+('NU','Điều dưỡng',3),
+('EN','Ngôn ngữ Anh',4),
+('KR','Ngôn ngữ Hàn Quốc',4),
+('CN','Ngôn ngữ Trung Quốc',4),
+('JP','Ngôn ngữ Nhật',4),
+('VN','Việt Nam học',5),
+('TM','Quản trị và Du lịch - Lữ hành',6),
+('HM','Quản trị khách sạn',6),
+('MM','Truyền thông đa phương tiện',7),
+('GD','Thiết kế đồ họa',7),
+('VO','Thanh nhạc',8);
 
 
 
 -- student_classes
-INSERT INTO student_classes (id, class_code, major_id, start_year) VALUES
+INSERT INTO student_classes (class_code, major_id, start_year) VALUES
 -- Trí tuệ nhân tạo
-(1,'TA36CL01',1,2023),
-(2,'TA36CL02',1,2023),
+('TA36CL01',1,2023),
+('TA36CL02',1,2023),
 
 -- Khoa học máy tính
-(3,'TI36CL01',2,2023),
-(4,'TI36CL02',2,2023),
-(5,'TI36CL03',2,2023),
+('TI36CL01',2,2023),
+('TI36CL02',2,2023),
+('TI36CL03',2,2023),
 
 -- Mạng máy tính và truyền thông dữ liệu
-(6,'TE36CL01',3,2023),
-(7,'TE36CL02',3,2023),
+('TE36CL01',3,2023),
+('TE36CL02',3,2023),
 
 -- Hệ thống thông tin
-(8,'TT36CL01',4,2023),
-(9,'TT36CL02',4,2023),
+('TT36CL01',4,2023),
+('TT36CL02',4,2023),
 
 -- Công nghệ thông tin
-(10,'IT36CL01',5,2023),
-(11,'IT36CL02',5,2023),
-(12,'IT36CL03',5,2023),
-(13,'IT36CL04',5,2023),
+('IT36CL01',5,2023),
+('IT36CL02',5,2023),
+('IT36CL03',5,2023),
+('IT36CL04',5,2023),
 
-(14,'EC36CL01',6,2023),
-(15,'MK36CL01',9,2023),
-(16,'BA36CL01',13,2023),
+('EC36CL01',6,2023),
+('MK36CL01',9,2023),
+('BA36CL01',13,2023),
 
-(17,'EN36CL01',15,2023),
-(18,'JP36CL01',18,2023);
+('EN36CL01',15,2023),
+('JP36CL01',18,2023);
 
 
 -- lecturers
-INSERT INTO lecturers (id, oauth_user_id, department_id, full_name, lecturer_code, phone_number, email) VALUES
-(1,23,1,'Nguyễn Đức Minh','CTI064', '0969642001','minhnd@thanglong.edu.vn'),
-(2,24,2,'Hoàng Thu Hà','KDM001','0123456789','ha.hoang@thanglong.edu.vn'),
-(3,25,3,'Đỗ Minh Tuấn','KDM002','0123456789','tuan.do@thanglong.edu.vn'),
-(4,26,1,'Nguyễn Thị Lan Anh','CTI065','0901000001','lananh.nguyen@thanglong.edu.vn'),
-(5,27,1,'Trần Quốc Bảo','CTI066','0901000002','bao.tran@thanglong.edu.vn'),
-(6,28,1,'Lê Hoàng Nam','CTI067','0901000003','nam.le@thanglong.edu.vn'),
-(7,29,1,'Phạm Gia Khánh','CTI068','0901000004','khanh.pham@thanglong.edu.vn');
+INSERT INTO lecturers (oauth_user_id, department_id, full_name, lecturer_code, phone_number, email) VALUES
+(23,1,'Nguyễn Đức Minh','CTI064', '0969642001','minhnd@thanglong.edu.vn'),
+(24,2,'Hoàng Thu Hà','KDM001','0123456789','ha.hoang@thanglong.edu.vn'),
+(25,3,'Đỗ Minh Tuấn','KDM002','0123456789','tuan.do@thanglong.edu.vn'),
+(26,1,'Nguyễn Thị Lan Anh','CTI065','0901000001','lananh.nguyen@thanglong.edu.vn'),
+(27,1,'Trần Quốc Bảo','CTI066','0901000002','bao.tran@thanglong.edu.vn'),
+(28,1,'Lê Hoàng Nam','CTI067','0901000003','nam.le@thanglong.edu.vn'),
+(29,1,'Phạm Gia Khánh','CTI068','0901000004','khanh.pham@thanglong.edu.vn');
 
 -- academic_advisors
-INSERT INTO academic_advisors (id, lecturer_id, student_class_id) VALUES
-(1,1,1),
-(2,1,2),
-(3,2,3),
-(4,2,4),
-(5,3,5),
-(6,3,6),
-(7,4,7),
-(8,4,8),
-(9,5,9),
-(10,5,10),
-(11,6,11),
-(12,6,12),
-(13,7,13);
+INSERT INTO academic_advisors ( lecturer_id, student_class_id) VALUES
+(1,1),
+(1,2),
+(2,3),
+(2,4),
+(3,5),
+(3,6),
+(4,7),
+(4,8),
+(5,9),
+(5,10),
+(6,11),
+(6,12),
+(7,13);
 
 -- students
-INSERT INTO students (id, oauth_user_id, student_class_id, full_name, student_code, gender, date_of_birth, status) VALUES
-(1,1,3,'Lê Việt Hoàng','A45033','NAM','2003-05-10','ACTIVE'),
-(2,2,10,'Nguyễn Ngọc Anh','A45035','NU','2004-08-20','ACTIVE'),
-(3,3,10,'Phùng Thanh Độ','A45044','NAM','2003-02-11','ACTIVE'),
-(4,11,3,'Nguyễn Hoàng Long','A45039','NAM','2004-02-15','ACTIVE'),
-(5,12,3,'Trần Minh Tuấn','A45040','NAM','2004-06-21','ACTIVE'),
-(6,13,3,'Lê Thị Thu Trang','A45041','NU','2004-09-12','ACTIVE'),
-(7,14,3,'Phạm Đức Anh','A45042','NAM','2003-11-05','ACTIVE'),
-(8,15,3,'Hoàng Ngọc Linh','A45043','NU','2004-07-30','ACTIVE'),
-(9,16,10,'Đỗ Quang Trung','A45045','NAM','2003-03-18','ACTIVE'),
-(10,17,1,'Nguyễn Hải Đăng','A45046','NAM','2004-01-25','ACTIVE'),
-(11,18,1,'Trần Thu Phương','A45047','NU','2004-05-14','ACTIVE'),
-(12,19,10,'Lê Quốc Khánh','A45048','NAM','2003-08-09','ACTIVE'),
-(13,20,3,'Phạm Thùy Dương','A45049','NU','2004-10-01','ACTIVE'),
-(14,21,10,'Hoàng Minh Khang','A45050','NAM','2003-12-22','ACTIVE'),
-(15,22,10,'Đỗ Thị Ngọc Anh','A45051','NU','2004-04-11','ACTIVE'),
-(16,6,10,'Đỗ Minh Tuấn','A45052','NAM','2003-09-17','ACTIVE'),
-(17,7,6,'Nguyễn Thị Lan Anh','A45053','NU','2004-02-28','ACTIVE'),
-(18,8,8,'Trần Quốc Bảo','A45054','NAM','2003-06-06','ACTIVE'),
-(19,9,8,'Lê Hoàng Nam','A45055','NAM','2004-08-19','ACTIVE'),
-(20,10,10,'Phạm Gia Khánh','A45056','NAM','2004-03-27','ACTIVE'),
-(21,30,10,'Trần Gia Bảo','A45057','NAM','2003-07-13','ACTIVE');
+INSERT INTO students (oauth_user_id, student_class_id, full_name, student_code, gender, date_of_birth, status) VALUES
+(1,3,'Lê Việt Hoàng','A45033','NAM','2003-05-10','ACTIVE'),
+(2,10,'Nguyễn Ngọc Anh','A45035','NU','2004-08-20','ACTIVE'),
+(3,10,'Phùng Thanh Độ','A45044','NAM','2003-02-11','ACTIVE'),
+(11,3,'Nguyễn Hoàng Long','A45039','NAM','2004-02-15','ACTIVE'),
+(12,3,'Trần Minh Tuấn','A45040','NAM','2004-06-21','ACTIVE'),
+(13,3,'Lê Thị Thu Trang','A45041','NU','2004-09-12','ACTIVE'),
+(14,3,'Phạm Đức Anh','A45042','NAM','2003-11-05','ACTIVE'),
+(15,3,'Hoàng Ngọc Linh','A45043','NU','2004-07-30','ACTIVE'),
+(16,10,'Đỗ Quang Trung','A45045','NAM','2003-03-18','ACTIVE'),
+(17,1,'Nguyễn Hải Đăng','A45046','NAM','2004-01-25','ACTIVE'),
+(18,1,'Trần Thu Phương','A45047','NU','2004-05-14','ACTIVE'),
+(19,10,'Lê Quốc Khánh','A45048','NAM','2003-08-09','ACTIVE'),
+(20,3,'Phạm Thùy Dương','A45049','NU','2004-10-01','ACTIVE'),
+(21,10,'Hoàng Minh Khang','A45050','NAM','2003-12-22','ACTIVE'),
+(22,10,'Đỗ Thị Ngọc Anh','A45051','NU','2004-04-11','ACTIVE'),
+(6,10,'Đỗ Minh Tuấn','A45052','NAM','2003-09-17','ACTIVE'),
+(7,6,'Nguyễn Thị Lan Anh','A45053','NU','2004-02-28','ACTIVE'),
+(8,8,'Trần Quốc Bảo','A45054','NAM','2003-06-06','ACTIVE'),
+(9,8,'Lê Hoàng Nam','A45055','NAM','2004-08-19','ACTIVE'),
+(10,10,'Phạm Gia Khánh','A45056','NAM','2004-03-27','ACTIVE'),
+(30,10,'Trần Gia Bảo','A45057','NAM','2003-07-13','ACTIVE');
 
 
 
@@ -265,7 +265,7 @@ INSERT INTO student_contacts (student_id, phone_number, address, email_personal)
 INSERT INTO emergency_contacts (student_id, full_name, phone_number, relationship, address) VALUES
 (1,'Nguyễn Văn Hùng','0911111111','Cha','Hà Nội'),
 (2,'Trần Thị Mai','0922222222','Mẹ','Hà Nội'),
-(3,'Phạm Văn Dũng','0933333333','Cha','Hà Nội'),
+(3,'Phùng Văn Dũng','0978594477','Cha','Hà Nội'),
 (4,'Lê Thị Hoa','0944444444','Mẹ','Hà Nội'),
 (5,'Hoàng Văn Sơn','0955555555','Cha','Đà Nẵng'),
 (6,'Đỗ Thị Lan','0966666666','Mẹ','Huế'),
@@ -289,7 +289,7 @@ INSERT INTO emergency_contacts (student_id, full_name, phone_number, relationshi
 INSERT INTO identity_cards (student_id, card_number, card_type, issued_date, issued_place) VALUES
 (1,'100000000008','CCCD','2021-08-08','Hải Phòng'),
 (2,'100000000009','CCCD','2022-09-09','Nam Định'),
-(3,'100000000010','CCCD','2021-10-10','Hà Nội'),
+(3,'00120304477','CCCD','2021-10-10','Hà Nội'),
 (4,'100000000011','CCCD','2022-11-11','Đà Nẵng'),
 (5,'100000000012','CCCD','2023-12-12','Huế'),
 (6,'100000000013','CCCD','2021-01-13','Hà Nội'),
@@ -332,78 +332,78 @@ INSERT INTO health_insurances (student_id, insurance_number, provider, valid_fro
 (20,'BHYT027','Bao Viet','2025-03-15','2027-03-15','BV Chợ Rẫy'),
 (21,'BHYT028','Bao Minh','2024-12-15','2026-12-15','BV Bạch Mai');
 -- semesters
-INSERT INTO semesters (id, semester_name, semester_code, academic_years, semester_number, start_date, end_date)
+INSERT INTO semesters (semester_name, semester_code, academic_years, semester_number, start_date, end_date)
 VALUES
-(1,'Học kỳ 1 2024-2025','HK1-2024-2025','2024-2025',1,'2024-09-02','2024-12-15'),
-(2,'Học kỳ 2 2024-2025','HK2-2024-2025','2024-2025',2,'2025-01-02','2025-04-27'),
-(3,'Học kỳ tăng cường 2024-2025','HKTC-2024-2025','2024-2025',3,'2025-05-05','2025-08-24'),
-(4,'Học kỳ 1 2025-2026','HK1-2025-2026','2025-2026',1,'2025-09-08','2025-12-28'),
-(5,'Học kỳ 2 2025-2026','HK2-2025-2026','2025-2026',2,'2026-01-05','2026-04-26'),
-(6,'Học kỳ tăng cường 2025-2026','HKTC-2025-2026','2025-2026',3,'2026-05-04','2026-08-23'),
-(7,'Học kỳ 1 2026-2027','HK1-2026-2027','2026-2027',1,'2026-09-07','2026-12-20'),
-(8,'Học kỳ 2 2026-2027','HK2-2026-2027','2026-2027',2,'2027-01-04','2027-04-25'),
-(9,'Học kỳ tăng cường 2026-2027','HKTC-2026-2027','2026-2027',3,'2027-05-03','2027-08-22');
+('Học kỳ 1 2024-2025','HK1-2024-2025','2024-2025',1,'2024-09-02','2024-12-22'),
+('Học kỳ 2 2024-2025','HK2-2024-2025','2024-2025',2,'2024-12-30','2025-04-27'),
+('Học kỳ tăng cường 2024-2025','HKTC-2024-2025','2024-2025',3,'2025-05-05','2025-08-24'),
+('Học kỳ 1 2025-2026','HK1-2025-2026','2025-2026',1,'2025-09-08','2025-12-28'),
+('Học kỳ 2 2025-2026','HK2-2025-2026','2025-2026',2,'2026-01-05','2026-04-26'),
+('Học kỳ tăng cường 2025-2026','HKTC-2025-2026','2025-2026',3,'2026-05-04','2026-08-23'),
+('Học kỳ 1 2026-2027','HK1-2026-2027','2026-2027',1,'2026-09-07','2026-12-20'),
+('Học kỳ 2 2026-2027','HK2-2026-2027','2026-2027',2,'2027-01-04','2027-04-25'),
+('Học kỳ tăng cường 2026-2027','HKTC-2026-2027','2026-2027',3,'2027-05-03','2027-08-22');
 
 
 -- study_programs
-INSERT INTO study_programs (id, major_id, study_program_code, study_program_name, total_credits, start_year) VALUES
-(1,1,'DHCQK36TA','Trí tuệ nhân tạo - Khóa 36',130,2023),
-(2,2,'DHCQK36TI','Khoa học máy tính - Khóa 36',130,2023),
-(3,3,'DHCQK36TE','Mạng máy tính và truyền thông dữ liệu - Khóa 36',130,2023),
-(4,4,'DHCQK36TT','Hệ thống thông tin - Khóa 36',130,2023),
-(5,5,'DHCQK36IT','Công nghệ thông tin - Khóa 36',130,2023),
+INSERT INTO study_programs (major_id, study_program_code, study_program_name, total_credits, start_year) VALUES
+(1,'DHCQK36TA','Trí tuệ nhân tạo - Khóa 36',130,2023),
+(2,'DHCQK36TI','Khoa học máy tính - Khóa 36',130,2023),
+(3,'DHCQK36TE','Mạng máy tính và truyền thông dữ liệu - Khóa 36',130,2023),
+(4,'DHCQK36TT','Hệ thống thông tin - Khóa 36',130,2023),
+(5,'DHCQK36IT','Công nghệ thông tin - Khóa 36',130,2023),
 
-(6,6,'DHCQK35EC','Thương mại điện tử - Khóa 35',125,2022),
-(7,7,'DHCQK35IE','Kinh tế quốc tế - Khóa 35',125,2022),
-(8,8,'DHCQK35EL','Luật kinh tế - Khóa 35',125,2022),
-(9,9,'DHCQK35MK','Marketing - Khóa 35',125,2022),
-(10,10,'DHCQK35AC','Kế toán - Khóa 35',125,2022),
-(11,11,'DHCQK35FN','Tài chính - Ngân hàng - Khóa 35',125,2022),
-(12,12,'DHCQK35LG','Logistics và Quản lí chuỗi cung ứng - Khóa 35',125,2022),
-(13,13,'DHCQK35BA','Quản trị kinh doanh - Khóa 35',125,2022),
+(6,'DHCQK35EC','Thương mại điện tử - Khóa 35',125,2022),
+(7,'DHCQK35IE','Kinh tế quốc tế - Khóa 35',125,2022),
+(8,'DHCQK35EL','Luật kinh tế - Khóa 35',125,2022),
+(9,'DHCQK35MK','Marketing - Khóa 35',125,2022),
+(10,'DHCQK35AC','Kế toán - Khóa 35',125,2022),
+(11,'DHCQK35FN','Tài chính - Ngân hàng - Khóa 35',125,2022),
+(12,'DHCQK35LG','Logistics và Quản lí chuỗi cung ứng - Khóa 35',125,2022),
+(13,'DHCQK35BA','Quản trị kinh doanh - Khóa 35',125,2022),
 
-(14,14,'DHCQK35NU','Điều dưỡng - Khóa 35',140,2022),
+(14,'DHCQK35NU','Điều dưỡng - Khóa 35',140,2022),
 
-(15,15,'DHCQK35EN','Ngôn ngữ Anh - Khóa 35',120,2022),
-(16,16,'DHCQK35KR','Ngôn ngữ Hàn Quốc - Khóa 35',120,2022),
-(17,17,'DHCQK35CN','Ngôn ngữ Trung Quốc - Khóa 35',120,2022),
-(18,18,'DHCQK35JP','Ngôn ngữ Nhật - Khóa 35',120,2022),
+(15,'DHCQK35EN','Ngôn ngữ Anh - Khóa 35',120,2022),
+(16,'DHCQK35KR','Ngôn ngữ Hàn Quốc - Khóa 35',120,2022),
+(17,'DHCQK35CN','Ngôn ngữ Trung Quốc - Khóa 35',120,2022),
+(18,'DHCQK35JP','Ngôn ngữ Nhật - Khóa 35',120,2022),
 
-(19,19,'DHCQK35VN','Việt Nam học - Khóa 35',120,2022),
+(19,'DHCQK35VN','Việt Nam học - Khóa 35',120,2022),
 
-(20,20,'DHCQK35TM','Quản trị và Du lịch - Lữ hành - Khóa 35',120,2022),
-(21,21,'DHCQK35HM','Quản trị khách sạn - Khóa 35',120,2022),
+(20,'DHCQK35TM','Quản trị và Du lịch - Lữ hành - Khóa 35',120,2022),
+(21,'DHCQK35HM','Quản trị khách sạn - Khóa 35',120,2022),
 
-(22,22,'DHCQK35MM','Truyền thông đa phương tiện - Khóa 35',120,2022),
-(23,23,'DHCQK35GD','Thiết kế đồ họa - Khóa 35',120,2022),
+(22,'DHCQK35MM','Truyền thông đa phương tiện - Khóa 35',120,2022),
+(23,'DHCQK35GD','Thiết kế đồ họa - Khóa 35',120,2022),
 
-(24,24,'DHCQK35VO','Thanh nhạc - Khóa 35',110,2022);
+(24,'DHCQK35VO','Thanh nhạc - Khóa 35',110,2022);
 
 
 
 -- student_majors
 INSERT INTO student_majors (student_id, major_id, study_program_id, start_year, end_year) VALUES
-(1,2,2,2023,2027),
-(2,5,5,2023,2027),
-(3,5,5,2023,2027),
-(4,1,2,2023,2027),
-(5,1,2,2023,2027),
-(6,5,2,2023,2027),
-(7,2,2,2023,2027),
-(8,1,2,2023,2027),
-(9,1,5,2023,2027),
-(10,4,1,2023,2027),
-(11,4,1,2023,2027),
-(12,5,2,2023,2027),
-(13,5,5,2023,2027),
-(14,5,5,2023,2027),
-(15,1,5,2023,2027),
-(16,1,5,2023,2027),
-(17,3,3,2023,2027),
-(18,3,3,2023,2027),
-(19,4,4,2023,2027),
-(20,4,4,2023,2027),
-(21,5,5,2023,2027);
+(1,2,2,2023,2028),
+(2,5,5,2023,2028),
+(3,5,5,2023,2028),
+(4,1,2,2023,2028),
+(5,1,2,2023,2028),
+(6,5,2,2023,2028),
+(7,2,2,2023,2028),
+(8,1,2,2023,2028),
+(9,1,5,2023,2028),
+(10,4,1,2023,2028),
+(11,4,1,2023,2028),
+(12,5,2,2023,2028),
+(13,5,5,2023,2028),
+(14,5,5,2023,2028),
+(15,1,5,2023,2028),
+(16,1,5,2023,2028),
+(17,3,3,2023,2028),
+(18,3,3,2023,2028),
+(19,4,4,2023,2028),
+(20,4,4,2023,2028),
+(21,5,5,2023,2028);
 
 -- academic_infos
 INSERT INTO academic_infos (student_major_id, cohort, position) VALUES
@@ -430,54 +430,55 @@ INSERT INTO academic_infos (student_major_id, cohort, position) VALUES
 (21,'K36','Sinh viên');
 
 -- subjects
-INSERT INTO subjects (id, faculty_id, department_id, subject_code, subject_name, credits, coefficient, lecture_hours, practice_hours)
+INSERT INTO subjects (faculty_id, department_id, subject_code, subject_name, credits, coefficient, lecture_hours, practice_hours)
 VALUES
-(1,9,null,'AD205','Kỹ năng soạn thảo văn bản (MS Office)',3,1.0,45,null),
-(2,6,null,'AD206','Ẩm thực Việt Nam',3,1.0,30,30),
-(3,9,null,'AD207','Kỹ năng soạn thảo văn bản (MS Open)',3,1.0,45,null),
-(4,9,null,'AD212','Phương pháp hùng biện và các thủ thuật tranh biện',3,1.0,45,null),
-(5,9,null,'AD213','Hát - Nhạc',3,1.0,45,null),
-(6,9,null,'AD214','Nâng cao chất lượng giọng hát',3,1.0,45,null),
-(7,5,null,'AD215','Kỹ năng sống',3,1.0,45,null),
-(8,4,11,'GF101','Tiếng Pháp 1',2,1.0,54,null),
-(9,4,11,'GF102','Tiếng Pháp 2',2,1.0,54,null),
-(10,3,9,'PG102','GDTC: Thể dục cổ truyền cơ bản',1,1.0,25,null),
-(11,1,null,'CS100','Tin đại cương',2,1.5,18,24),
-(12,9,null,'CS102','Tin học văn phòng',2,1.5,30,null),
-(13,2,null,'EC102','Nhập môn kinh tế học',2,1.2,30,null),
-(14, 4 ,8,'GE111','Tiếng Anh sơ cấp 1',2,1.2,54,null),
-(15, 1 ,1,'MA101','Logic, suy luận toán học và kỹ thuật đếm',3,1.2,27,36),
-(16, 9 ,null,'ML113','Triết học Mác - Lênin',3,1.2,45,null),
-(17, 9 ,null,'NA151','Khoa học môi trường',2,1.2,30,null),
-(18, 5 ,null,'SH131','Pháp luật đại cương',2,1.2,30,null),
-(19, 5 ,null,'VL101','Tiếng Việt thực hành',2,1.2,30,null),
-(20, 1 ,null,'CS121','Lập trình cơ sở 1',3,1.5,27,36),
-(21, 1 ,null,'CS212','Kiến trúc máy tính',3,1.5,45,null),
-(22, 1 ,null,'SE422','Phát triển dự án',3,1.5,45,null),
-(23, 4 ,8,'GE112','Tiếng Anh sơ cấp 2',2,1.2,54,null),
-(24, 1 ,1,'MA120','Đại số tuyến tính',3,1.2,27,36),
-(25, 9 ,null,'ML114','Kinh tế chính trị Mác - Lênin',2,1.2,30,null),
-(26, 4 ,8,'GE121','Tiếng Anh sơ trung cấp 1',2,1.2,54,null),
-(27, 1 ,1,'MA110','Giải tích 1',3,1.2,27,36),
-(28, 1 ,1,'MA111','Giải tích 2',3,1.2,27,36),
-(29, 1 ,null,'MI201','Toán rời rạc',3,1.2,45,null),
-(30, 9 ,null,'ML115','Chủ nghĩa xã hội khoa học',2, 1.2,30,null),
-(31, 1 ,null,'CS111','Kỹ thuật số',2, 1.5,18,24),
-(32, 1 ,1,'CF213','Cấu trúc dữ liệu và giải thuật',4,1.6,45,36),
-(33, 4 ,8,'GE222','Tiếng Anh sơ trung cấp 2',2,1.2,54,null),
-(34, 1 ,null,'IS222','Cơ sở dữ liệu',3,1.2,45,null),
-(35, 1 ,1,'MA239','Xác suất thống kê',4,1.6,45,27),
-(36, 9 ,null,'ML202','Tư tưởng Hồ Chí Minh',2,1.2,30,null),
-(37, 1 ,null,'CS315','Nguyên lý hệ điều hành',3,1.2,45,null),
-(38, 1 ,null,'IS322','Hệ quản trị cơ sở dữ liệu',3,1.2,45,null),
-(39,1,null,'IS314','Hệ thống thông tin',3, 1.2,45,null),
-(40,1,null,'CS122','Lập trình hướng đối tượng',3,1.5,27,36),
-(41,1,null, 'CF231', 'Lý thuyết thông tin và mã hóa', 2, 1.2, 18, 24),
-(42,1,null, 'NW212', 'Mạng máy tính', 2, 1.2, 18, 24),
-(43,1,null, 'CF301', 'Ngôn ngữ hình thức và Otomat', 3, 1.5, 45, null),
-(44,1,null, 'IS332', 'Phân tích thiết kế hướng đối tượng', 3, 1.5, 45, null),
-(45,1,null, 'MI312', 'Đồ họa', 2, 1.2, 18, 24),
-(46,1,null, 'MI322', 'Trí tuệ nhân tạo và công nghệ tri thức', 3, 1.2, 45, null);
+(9,null,'AD205','Kỹ năng soạn thảo văn bản (MS Office)',3,1.0,45,null),
+(6,null,'AD206','Ẩm thực Việt Nam',3,1.0,30,30),
+(9,null,'AD207','Kỹ năng soạn thảo văn bản (MS Open)',3,1.0,45,null),
+(9,null,'AD212','Phương pháp hùng biện và các thủ thuật tranh biện',3,1.0,45,null),
+(9,null,'AD213','Hát - Nhạc',3,1.0,45,null),
+(9,null,'AD214','Nâng cao chất lượng giọng hát',3,1.0,45,null),
+(5,null,'AD215','Kỹ năng sống',3,1.0,45,null),
+(4,11,'GF101','Tiếng Pháp 1',2,1.0,54,null),
+(4,11,'GF102','Tiếng Pháp 2',2,1.0,54,null),
+(3,9,'PG102','GDTC: Thể dục cổ truyền cơ bản',1,1.0,25,null),
+(1,null,'CS100','Tin đại cương',2,1.5,18,24),
+(9,null,'CS102','Tin học văn phòng',2,1.5,30,null),
+(2,null,'EC102','Nhập môn kinh tế học',2,1.2,30,null),
+( 4 ,8,'GE111','Tiếng Anh sơ cấp 1',2,1.2,54,null),
+( 1 ,1,'MA101','Logic, suy luận toán học và kỹ thuật đếm',3,1.2,27,36),
+( 9 ,null,'ML113','Triết học Mác - Lênin',3,1.2,45,null),
+( 9 ,null,'NA151','Khoa học môi trường',2,1.2,30,null),
+( 5 ,null,'SH131','Pháp luật đại cương',2,1.2,30,null),
+( 5 ,null,'VL101','Tiếng Việt thực hành',2,1.2,30,null),
+( 1 ,null,'CS121','Lập trình cơ sở 1',3,1.5,27,36),
+( 1 ,null,'CS212','Kiến trúc máy tính',3,1.5,45,null),
+( 1 ,null,'SE422','Phát triển dự án',3,1.5,45,null),
+( 4 ,8,'GE112','Tiếng Anh sơ cấp 2',2,1.2,54,null),
+( 1 ,1,'MA120','Đại số tuyến tính',3,1.2,27,36),
+( 9 ,null,'ML114','Kinh tế chính trị Mác - Lênin',2,1.2,30,null),
+( 4 ,8,'GE121','Tiếng Anh sơ trung cấp 1',2,1.2,54,null),
+( 1 ,1,'MA110','Giải tích 1',3,1.2,27,36),
+( 1 ,1,'MA111','Giải tích 2',3,1.2,27,36),
+( 1 ,null,'MI201','Toán rời rạc',3,1.2,45,null),
+( 9 ,null,'ML115','Chủ nghĩa xã hội khoa học',2, 1.2,30,null),
+( 1 ,null,'CS110','Kỹ thuật số',2, 1.5,18,24),
+( 1 ,1,'CF213','Cấu trúc dữ liệu và giải thuật',4,1.6,45,36),
+( 4 ,8,'GE222','Tiếng Anh sơ trung cấp 2',2,1.2,54,null),
+( 1 ,null,'IS222','Cơ sở dữ liệu',3,1.2,45,null),
+( 1 ,1,'MA239','Xác suất thống kê',4,1.6,45,27),
+( 9 ,null,'ML202','Tư tưởng Hồ Chí Minh',2,1.2,30,null),
+( 1 ,null,'CS315','Nguyên lý hệ điều hành',3,1.2,45,null),
+( 1 ,null,'IS322','Hệ quản trị cơ sở dữ liệu',3,1.2,45,null),
+(1,null,'IS314','Hệ thống thông tin',3, 1.2,45,null),
+(1,null,'CS122','Lập trình hướng đối tượng',3,1.5,27,36),
+(1,null, 'CF231', 'Lý thuyết thông tin và mã hóa', 2, 1.2, 18, 24),
+(1,null, 'NW212', 'Mạng máy tính', 2, 1.2, 18, 24),
+(1,null, 'CF301', 'Ngôn ngữ hình thức và Otomat', 3, 1.5, 45, null),
+(1,null, 'IS332', 'Phân tích thiết kế hướng đối tượng', 3, 1.5, 45, null),
+(1,null, 'MI312', 'Đồ họa', 2, 1.2, 18, 24),
+(1,null, 'MI322', 'Trí tuệ nhân tạo và công nghệ tri thức', 3, 1.2, 45, null),
+(1,null, 'SE302', 'Công nghệ phần mềm', 2, 1.2, 18, 24);
 
 -- study_program_subjects
 INSERT INTO study_program_subjects (study_program_id, subject_id, semester_id, is_required, elective_group)
@@ -568,120 +569,140 @@ VALUES
 (2,9,5,false, null);
 
 -- course_classes
-INSERT INTO course_classes (id, lecturer_id, subject_id, semester_id, class_code, class_name, capacity)
+INSERT INTO course_classes (lecturer_id, subject_id, semester_id, class_code, class_name, capacity)
 VALUES
-(1,1,32,4,'252CF21301','Cấu trúc dữ liệu và giải thuật 01',40),
-(2,1,7,4,'252AD21501','Kỹ năng sống 01',40),
-(3,2,8,4,'252GF10101','Tiếng Pháp 1 - 01',35),
-(4,2,9,4,'252GF10201','Tiếng Pháp 2 - 01',35),
-(5,3,10,4,'252PG10201','GDTC cổ truyền 01',50),
+--1--
+(1,32,4,'252CF21301','Cấu trúc dữ liệu và giải thuật 01',40),
+--2--
+(1,7,4,'252AD21501','Kỹ năng sống 01',40),
+--3--
+(2,8,4,'252GF10101','Tiếng Pháp 1 - 01',35),
+--4--
+(2,9,4,'252GF10201','Tiếng Pháp 2 - 01',35),
+--5--
+(3,10,4,'252PG10201','GDTC cổ truyền 01',50),
+--6--
+(1,11,4,'252CS10001','Tin đại cương 01',45),
+--7--
+(4,12,4,'252CS10201','Tin học văn phòng 01',45),
+--8--
+(5,13,4,'252EC10201','Nhập môn kinh tế học 01',50),
+--9--
+(6,14,4,'252GE11101','Tiếng Anh sơ cấp 1 - 01',40),
+--10--
+(1,15,4,'252MA10101','Logic và suy luận toán học 01',45),
+--11--
+(7,16,4,'252ML11301','Triết học Mác - Lênin 01',50),
+--12--
+(7,17,4,'252NA15101','Khoa học môi trường 01',40),
+--13--
+(4,18,5,'252SH13101','Pháp luật đại cương 01',45),
+--14--
+(4,19,5,'252VL10101','Tiếng Việt thực hành 01',45),
+--15--
+(1,20,5,'252CS12101','Lập trình cơ sở 1 - 01',45),
+--16--
+(1,21,5,'252CS21201','Kiến trúc máy tính 01',40),
+--17--
+(1,22,5,'252SE42201','Phát triển dự án 01',45),
+--18--
+(6,23,5,'252GE11201','Tiếng Anh sơ cấp 2 - 01',40),
+--19--
+(1,24,5,'252MA12001','Đại số tuyến tính 01',45),
+--20--
+(7,25,5,'252ML11401','Kinh tế chính trị M-L 01',50),
+--21--
+(6,26,5,'252GE12101','Tiếng Anh sơ trung cấp 1 - 01',40),
+--22--
+(1,27,5,'252MA11001','Giải tích 1 - 01',45),
+--23--
+(1,28,5,'252MA11101','Giải tích 2 - 01',45),
+--24--
+(1,29,5,'252MI20101','Toán rời rạc 01',45),
+--25--
+(7,30,6,'252ML11501','CNXH khoa học 01',50),
+--26--
+(1,31,6,'252CS11101','Kỹ thuật số 01',40),
 
-(6,1,11,4,'252CS10001','Tin đại cương 01',45),
-(7,4,12,4,'252CS10201','Tin học văn phòng 01',45),
-(8,5,13,4,'252EC10201','Nhập môn kinh tế học 01',50),
-(9,6,14,4,'252GE11101','Tiếng Anh sơ cấp 1 - 01',40),
+(1,32,6,'252CF21301','Cấu trúc dữ liệu và giải thuật 01',40),
+(6,33,6,'252GE22201','Tiếng Anh sơ trung cấp 2 - 01',40),
 
-(10,1,15,4,'252MA10101','Logic và suy luận toán học 01',45),
-(11,7,16,4,'252ML11301','Triết học Mác - Lênin 01',50),
-(12,7,17,4,'252NA15101','Khoa học môi trường 01',40),
-(13,4,18,5,'252SH13101','Pháp luật đại cương 01',45),
-(14,4,19,5,'252VL10101','Tiếng Việt thực hành 01',45),
+(1,34,6,'252IS22201','Cơ sở dữ liệu 01',45),
+(1,35,6,'252MA23901','Xác suất thống kê 01',45),
+(7,36,6,'252ML20201','Tư tưởng HCM 01',50),
 
-(15,1,20,5,'252CS12101','Lập trình cơ sở 1 - 01',45),
-(16,1,21,5,'252CS21201','Kiến trúc máy tính 01',40),
-(17,1,22,5,'252SE42201','Phát triển dự án 01',45),
+(1,37,6,'252CS31501','Hệ điều hành 01',40),
+(1,38,6,'252IS32201','Hệ QTCSDL 01',40),
+(1,39,6,'252IS31401','Hệ thống thông tin 01',40),
+(1,40,6,'252CS12201','Lập trình hướng đối tượng 01',45),
 
-(18,6,23,5,'252GE11201','Tiếng Anh sơ cấp 2 - 01',40),
-(19,1,24,5,'252MA12001','Đại số tuyến tính 01',45),
-(20,7,25,5,'252ML11401','Kinh tế chính trị M-L 01',50),
+(1,32,6,'252CF21301','Cấu trúc dữ liệu và giải thuật 01',40),
+(1,7,6,'252AD21501','Kỹ năng sống 01',40),
+(2,8,6,'252GF10101','Tiếng Pháp 1 - 01',35),
+(2,9,6,'252GF10201','Tiếng Pháp 2 - 01',35),
+(3,10,6,'252PG10201','GDTC cổ truyền 01',50),
 
-(21,6,26,5,'252GE12101','Tiếng Anh sơ trung cấp 1 - 01',40),
-(22,1,27,5,'252MA11001','Giải tích 1 - 01',45),
-(23,1,28,5,'252MA11101','Giải tích 2 - 01',45),
+(1,11,6,'252CS10001','Tin đại cương 01',45),
+(4,12,6,'252CS10201','Tin học văn phòng 01',45),
+(5,13,6,'252EC10201','Nhập môn kinh tế học 01',50),
+(6,14,6,'252GE11101','Tiếng Anh sơ cấp 1 - 01',40),
 
-(24,1,29,5,'252MI20101','Toán rời rạc 01',45),
-(25,7,30,6,'252ML11501','CNXH khoa học 01',50),
-(26,1,31,6,'252CS11101','Kỹ thuật số 01',40),
+(1,15,7,'252MA10101','Logic và suy luận toán học 01',45),
+(1,15,7,'252MA10102','Logic và suy luận toán học 02',45),
+(7,16,7,'252ML11301','Triết học Mác - Lênin 01',50),
+(7,16,7,'252ML11302','Triết học Mác - Lênin 02',50),
+(7,17,7,'252NA15101','Khoa học môi trường 01',40),
+(7,17,7,'252NA15102','Khoa học môi trường 02',40),
+(4,18,7,'252SH13101','Pháp luật đại cương 01',45),
+(4,19,7,'252VL10101','Tiếng Việt thực hành 01',45),
 
-(27,1,32,6,'252CF21301','Cấu trúc dữ liệu và giải thuật 01',40),
-(28,6,33,6,'252GE22201','Tiếng Anh sơ trung cấp 2 - 01',40),
+(1,20,7,'252CS12101','Lập trình cơ sở 1 - 01',45),
+(1,20,7,'252CS12102','Lập trình cơ sở 1 - 02',45),
+(1,21,7,'252CS21201','Kiến trúc máy tính 01',40),
+(1,21,7,'252CS21202','Kiến trúc máy tính 02',40),
+(1,22,7,'252SE42201','Phát triển dự án 01',45),
+(1,22,7,'252SE42202','Phát triển dự án 02',45),
 
-(29,1,34,6,'252IS22201','Cơ sở dữ liệu 01',45),
-(30,1,35,6,'252MA23901','Xác suất thống kê 01',45),
-(31,7,36,6,'252ML20201','Tư tưởng HCM 01',50),
+(6,23,7,'252GE11201','Tiếng Anh sơ cấp 2 - 01',40),
+(6,23,7,'252GE11202','Tiếng Anh sơ cấp 2 - 02',40),
+(1,24,7,'252MA12001','Đại số tuyến tính 01',45),
+(1,24,7,'252MA12002','Đại số tuyến tính 02',45),
+(7,25,7,'252ML11401','Kinh tế chính trị M-L 01',50),
+(7,25,7,'252ML11402','Kinh tế chính trị M-L 02',50),
 
-(32,1,37,6,'252CS31501','Hệ điều hành 01',40),
-(33,1,38,6,'252IS32201','Hệ QTCSDL 01',40),
-(34,1,39,6,'252IS31401','Hệ thống thông tin 01',40),
-(35,1,40,6,'252CS12201','Lập trình hướng đối tượng 01',45),
+(6,26,7,'252GE12101','Tiếng Anh sơ trung cấp 1 - 01',40),
+(6,26,7,'252GE12102','Tiếng Anh sơ trung cấp 1 - 02',40),
+(1,27,7,'252MA11001','Giải tích 1 - 01',45),
+(1,27,7,'252MA11002','Giải tích 1 - 02',45),
+(1,28,7,'252MA11101','Giải tích 2 - 01',45),
+(1,28,7,'252MA11102','Giải tích 2 - 02',45),
 
-(36,1,32,6,'252CF21301','Cấu trúc dữ liệu và giải thuật 01',40),
-(37,1,7,6,'252AD21501','Kỹ năng sống 01',40),
-(38,2,8,6,'252GF10101','Tiếng Pháp 1 - 01',35),
-(39,2,9,6,'252GF10201','Tiếng Pháp 2 - 01',35),
-(40,3,10,6,'252PG10201','GDTC cổ truyền 01',50),
+(1,29,7,'252MI20101','Toán rời rạc 01',45),
+(1,29,7,'252MI20102','Toán rời rạc 02',45),
+(7,30,7,'252ML11501','CNXH khoa học 01',50),
+(7,30,7,'252ML11502','CNXH khoa học 02',50),
+(1,31,7,'252CS11101','Kỹ thuật số 01',40),
+(1,31,7,'252CS11102','Kỹ thuật số 02',40),
 
-(41,1,11,6,'252CS10001','Tin đại cương 01',45),
-(42,4,12,6,'252CS10201','Tin học văn phòng 01',45),
-(43,5,13,6,'252EC10201','Nhập môn kinh tế học 01',50),
-(44,6,14,6,'252GE11101','Tiếng Anh sơ cấp 1 - 01',40),
+(1,32,7,'252CF21301','Cấu trúc dữ liệu và giải thuật 01',40),
+(1,32,7,'252CF21302','Cấu trúc dữ liệu và giải thuật 02',40),
+(6,33,7,'252GE22201','Tiếng Anh sơ trung cấp 2 - 01',40),
+(6,33,7,'252GE22202','Tiếng Anh sơ trung cấp 2 - 02',40),
 
-(45,1,15,7,'252MA10101','Logic và suy luận toán học 01',45),
-(46,1,15,7,'252MA10102','Logic và suy luận toán học 02',45),
-(47,7,16,7,'252ML11301','Triết học Mác - Lênin 01',50),
-(48,7,16,7,'252ML11302','Triết học Mác - Lênin 02',50),
-(49,7,17,7,'252NA15101','Khoa học môi trường 01',40),
-(50,7,17,7,'252NA15102','Khoa học môi trường 02',40),
-(51,4,18,7,'252SH13101','Pháp luật đại cương 01',45),
-(52,4,19,7,'252VL10101','Tiếng Việt thực hành 01',45),
+(1,34,7,'252IS22201','Cơ sở dữ liệu 01',45),
+(1,34,7,'252IS22202','Cơ sở dữ liệu 02',45),
+(1,35,7,'252MA23901','Xác suất thống kê 01',45),
+(1,35,7,'252MA23902','Xác suất thống kê 02',45),
+(7,36,7,'252ML20201','Tư tưởng HCM 01',50),
+(7,36,7,'252ML20202','Tư tưởng HCM 02',50),
 
-(53,1,20,7,'252CS12101','Lập trình cơ sở 1 - 01',45),
-(54,1,20,7,'252CS12102','Lập trình cơ sở 1 - 02',45),
-(55,1,21,7,'252CS21201','Kiến trúc máy tính 01',40),
-(56,1,21,7,'252CS21202','Kiến trúc máy tính 02',40),
-(57,1,22,7,'252SE42201','Phát triển dự án 01',45),
-(58,1,22,7,'252SE42202','Phát triển dự án 02',45),
-
-(59,6,23,7,'252GE11201','Tiếng Anh sơ cấp 2 - 01',40),
-(60,6,23,7,'252GE11202','Tiếng Anh sơ cấp 2 - 02',40),
-(61,1,24,7,'252MA12001','Đại số tuyến tính 01',45),
-(62,1,24,7,'252MA12002','Đại số tuyến tính 02',45),
-(63,7,25,7,'252ML11401','Kinh tế chính trị M-L 01',50),
-(64,7,25,7,'252ML11402','Kinh tế chính trị M-L 02',50),
-
-(65,6,26,7,'252GE12101','Tiếng Anh sơ trung cấp 1 - 01',40),
-(66,6,26,7,'252GE12102','Tiếng Anh sơ trung cấp 1 - 02',40),
-(67,1,27,7,'252MA11001','Giải tích 1 - 01',45),
-(68,1,27,7,'252MA11002','Giải tích 1 - 02',45),
-(69,1,28,7,'252MA11101','Giải tích 2 - 01',45),
-(70,1,28,7,'252MA11102','Giải tích 2 - 02',45),
-
-(71,1,29,7,'252MI20101','Toán rời rạc 01',45),
-(72,1,29,7,'252MI20102','Toán rời rạc 02',45),
-(73,7,30,7,'252ML11501','CNXH khoa học 01',50),
-(74,7,30,7,'252ML11502','CNXH khoa học 02',50),
-(75,1,31,7,'252CS11101','Kỹ thuật số 01',40),
-(76,1,31,7,'252CS11102','Kỹ thuật số 02',40),
-
-(77,1,32,7,'252CF21301','Cấu trúc dữ liệu và giải thuật 01',40),
-(78,1,32,7,'252CF21302','Cấu trúc dữ liệu và giải thuật 02',40),
-(79,6,33,7,'252GE22201','Tiếng Anh sơ trung cấp 2 - 01',40),
-(80,6,33,7,'252GE22202','Tiếng Anh sơ trung cấp 2 - 02',40),
-
-(81,1,34,7,'252IS22201','Cơ sở dữ liệu 01',45),
-(82,1,34,7,'252IS22202','Cơ sở dữ liệu 02',45),
-(83,1,35,7,'252MA23901','Xác suất thống kê 01',45),
-(84,1,35,7,'252MA23902','Xác suất thống kê 02',45),
-(85,7,36,7,'252ML20201','Tư tưởng HCM 01',50),
-(86,7,36,7,'252ML20202','Tư tưởng HCM 02',50),
-
-(87,1,37,7,'252CS31501','Hệ điều hành 01',40),
-(88,1,37,7,'252CS31502','Hệ điều hành 02',40),
-(89,1,38,7,'252IS32201','Hệ QTCSDL 01',40),
-(90,1,38,7,'252IS32202','Hệ QTCSDL 02',40),
-(91,1,39,7,'252IS31401','Hệ thống thông tin 01',40),
-(92,1,39,7,'252IS31402','Hệ thống thông tin 02',40),
-(93,1,40,7,'252CS12201','Lập trình hướng đối tượng 01',45);
+(1,37,7,'252CS31501','Hệ điều hành 01',40),
+(1,37,7,'252CS31502','Hệ điều hành 02',40),
+(1,38,7,'252IS32201','Hệ QTCSDL 01',40),
+(1,38,7,'252IS32202','Hệ QTCSDL 02',40),
+(1,39,7,'252IS31401','Hệ thống thông tin 01',40),
+(1,39,7,'252IS31402','Hệ thống thông tin 02',40),
+(1,40,7,'252CS12201','Lập trình hướng đối tượng 01',45);
 
 -- student_course_classes
 INSERT INTO student_course_classes 
@@ -809,381 +830,381 @@ INSERT INTO class_schedules
 (course_class_id, day_of_week, start_period, end_period, start_time, end_time, room)
 VALUES
 -- class 1 | subject 32 | 2 buổi/tuần
+(1,4,4,6,'10:10','12:40','B202'),
 (1,5,4,6,'10:10','12:40','B202'),
-(1,6,4,6,'10:10','12:40','B202'),
  
 -- class 2 | subject 7 | 1 buổi/tuần
-(2,3,4,6,'10:10','12:40','A104'),
+(2,2,4,6,'10:10','12:40','A104'),
  
 -- class 3 | subject 8 | 2 buổi/tuần
-(3,4,10,12,'15:15','17:30','A102'),
-(3,6,1,3,'07:00','09:15','A102'),
+(3,3,10,12,'15:40','17:30','A102'),
+(3,5,1,3,'07:00','09:15','A102'),
  
 -- class 4 | subject 9 | 2 buổi/tuần
-(4,7,4,6,'10:10','12:40','B205'),
-(4,3,10,12,'15:15','17:30','B205'),
+(4,6,4,6,'10:10','12:40','B205'),
+(4,2,10,12,'15:40','17:30','B205'),
  
 -- class 5 | subject 10 | 2 buổi/tuần
-(5,6,7,9,'13:00','15:30','A103'),
-(5,2,1,3,'07:00','09:15','A103'),
+(5,5,7,9,'13:00','15:30','A103'),
+(5,1,1,3,'07:00','09:15','A103'),
  
 -- class 6 | subject 11 | 2 buổi/tuần
-(6,2,7,9,'13:00','15:30','B203'),
-(6,4,1,3,'07:00','09:15','B203'),
+(6,1,7,9,'13:00','15:30','B203'),
+(6,3,1,3,'07:00','09:15','B203'),
  
 -- class 7 | subject 12 | 2 buổi/tuần
-(7,6,10,12,'15:15','17:30','B203'),
-(7,7,10,12,'15:15','17:30','B203'),
+(7,5,10,12,'15:40','17:40','B203'),
+(7,6,10,12,'15:40','17:30','B203'),
  
 -- class 8 | subject 13 | 1 buổi/tuần
-(8,2,4,6,'10:10','12:40','B205'),
+(8,1,4,6,'10:10','12:40','B205'),
  
 -- class 9 | subject 14 | 2 buổi/tuần
-(9,2,10,12,'15:15','17:30','B203'),
-(9,7,1,3,'07:00','09:15','B203'),
+(9,1,10,12,'15:40','17:30','B203'),
+(9,6,1,3,'07:00','09:15','B203'),
  
 -- class 10 | subject 15 | 1 buổi/tuần
-(10,4,1,3,'07:00','09:15','A103'),
+(10,3,1,3,'07:00','09:15','A103'),
  
 -- class 11 | subject 16 | 1 buổi/tuần
-(11,4,4,6,'10:10','12:40','B202'),
+(11,3,4,6,'10:10','12:40','B202'),
  
 -- class 12 | subject 17 | 1 buổi/tuần
-(12,5,4,6,'10:10','12:40','B204'),
+(12,4,4,6,'10:10','12:40','B204'),
  
 -- class 13 | subject 18 | 1 buổi/tuần
-(13,7,4,6,'10:10','12:40','A101'),
+(13,6,4,6,'10:10','12:40','A101'),
  
 -- class 14 | subject 19 | 1 buổi/tuần
-(14,4,10,12,'15:15','17:30','B203'),
+(14,3,10,12,'15:40','17:30','B203'),
  
 -- class 15 | subject 20 | 2 buổi/tuần
-(15,2,4,6,'10:10','12:40','A103'),
-(15,6,10,12,'15:15','17:30','A103'),
+(15,1,4,6,'10:10','12:40','A103'),
+(15,5,10,12,'15:40','17:30','A103'),
  
 -- class 16 | subject 21 | 2 buổi/tuần
-(16,2,1,3,'07:00','09:15','A102'),
-(16,3,7,9,'13:00','15:30','A102'),
+(16,1,1,3,'07:00','09:15','A102'),
+(16,2,7,9,'13:00','15:30','A102'),
  
 -- class 17 | subject 22 | 2 buổi/tuần
-(17,3,10,12,'15:15','17:30','A103'),
-(17,6,7,9,'13:00','15:30','A103'),
+(17,2,10,12,'15:40','17:30','A103'),
+(17,5,7,9,'13:00','15:30','A103'),
  
 -- class 18 | subject 23 | 2 buổi/tuần
-(18,2,7,9,'13:00','15:30','B203'),
-(18,3,1,3,'07:00','09:15','B203'),
+(18,1,7,9,'13:00','15:30','B203'),
+(18,2,1,3,'07:00','09:15','B203'),
  
 -- class 19 | subject 24 | 2 buổi/tuần
-(19,4,1,3,'07:00','09:15','B204'),
-(19,6,1,3,'07:00','09:15','B204'),
+(19,3,1,3,'07:00','09:15','B204'),
+(19,5,1,3,'07:00','09:15','B204'),
  
 -- class 20 | subject 25 | 1 buổi/tuần
-(20,5,7,9,'13:00','15:30','B201'),
+(20,4,7,9,'13:00','15:30','B201'),
  
 -- class 21 | subject 26 | 2 buổi/tuần
-(21,5,10,12,'15:15','17:30','B202'),
-(21,4,4,6,'10:10','12:40','B202'),
+(21,4,10,12,'15:40','17:30','B202'),
+(21,3,4,6,'10:10','12:40','B202'),
  
 -- class 22 | subject 27 | 2 buổi/tuần
-(22,2,7,9,'13:00','15:30','A105'),
-(22,3,4,6,'10:10','12:40','A105'),
+(22,1,7,9,'13:00','15:30','A105'),
+(22,2,4,6,'10:10','12:40','A105'),
  
 -- class 23 | subject 28 | 2 buổi/tuần
-(23,4,10,12,'15:15','17:30','B202'),
-(23,2,10,12,'15:15','17:30','B202'),
+(23,3,10,12,'15:40','17:30','B202'),
+(23,1,10,12,'15:40','17:30','B202'),
  
 -- class 24 | subject 29 | 2 buổi/tuần
-(24,4,1,3,'07:00','09:15','B202'),
-(24,6,7,9,'13:00','15:30','B202'),
+(24,1,1,3,'07:00','09:15','B202'),
+(24,5,7,9,'13:00','15:30','B202'),
  
 -- class 25 | subject 30 | 1 buổi/tuần
-(25,5,4,6,'10:10','12:40','B201'),
+(25,4,4,6,'10:10','12:40','B201'),
  
 -- class 26 | subject 31 | 2 buổi/tuần
-(26,5,7,9,'13:00','15:30','A105'),
-(26,4,10,12,'15:15','17:30','A105'),
+(26,4,7,9,'13:00','15:30','A105'),
+(26,3,10,12,'15:40','17:30','A105'),
  
 -- class 27 | subject 32 | 2 buổi/tuần
-(27,6,10,12,'15:15','17:30','B205'),
-(27,3,10,12,'15:15','17:30','B205'),
+(27,5,10,12,'15:40','17:30','B205'),
+(27,2,10,12,'15:40','17:30','B205'),
  
 -- class 28 | subject 33 | 2 buổi/tuần
-(28,3,7,9,'13:00','15:30','B201'),
 (28,2,7,9,'13:00','15:30','B201'),
+(28,1,7,9,'13:00','15:30','B201'),
  
 -- class 29 | subject 34 | 2 buổi/tuần
-(29,3,4,6,'10:10','12:40','A105'),
-(29,7,7,9,'13:00','15:30','A105'),
+(29,2,4,6,'10:10','12:40','A105'),
+(29,6,7,9,'13:00','15:30','A105'),
  
 -- class 30 | subject 35 | 2 buổi/tuần
-(30,7,4,6,'10:10','12:40','B202'),
-(30,2,1,3,'07:00','09:15','B202'),
+(30,6,4,6,'10:10','12:40','B202'),
+(30,1,1,3,'07:00','09:15','B202'),
  
 -- class 31 | subject 36 | 1 buổi/tuần
-(31,6,4,6,'10:10','12:40','B204'),
+(31,5,4,6,'10:10','12:40','B204'),
  
 -- class 32 | subject 37 | 2 buổi/tuần
-(32,6,7,9,'13:00','15:30','A101'),
-(32,7,4,6,'10:10','12:40','A101'),
+(32,5,7,9,'13:00','15:30','A101'),
+(32,6,4,6,'10:10','12:40','A101'),
  
 -- class 33 | subject 38 | 2 buổi/tuần
-(33,5,4,6,'10:10','12:40','B204'),
-(33,4,10,12,'15:15','17:30','B204'),
+(33,4,4,6,'10:10','12:40','B204'),
+(33,3,10,12,'15:40','17:30','B204'),
  
 -- class 34 | subject 39 | 2 buổi/tuần
-(34,6,7,9,'13:00','15:30','B203'),
-(34,3,1,3,'07:00','09:15','B203'),
+(34,5,7,9,'13:00','15:30','B203'),
+(34,2,1,3,'07:00','09:15','B203'),
  
 -- class 35 | subject 40 | 2 buổi/tuần
-(35,4,1,3,'07:00','09:15','A102'),
-(35,6,1,3,'07:00','09:15','A102'),
+(35,3,1,3,'07:00','09:15','A102'),
+(35,5,1,3,'07:00','09:15','A102'),
  
 -- class 36 | subject 32 | 2 buổi/tuần
-(36,5,7,9,'13:00','15:30','A101'),
 (36,4,7,9,'13:00','15:30','A101'),
+(36,3,7,9,'13:00','15:30','A101'),
  
 -- class 37 | subject 7 | 1 buổi/tuần
-(37,2,10,12,'15:15','17:30','A104'),
+(37,1,10,12,'15:40','17:30','A104'),
  
 -- class 38 | subject 8 | 2 buổi/tuần
-(38,3,7,9,'13:00','15:30','B202'),
-(38,5,7,9,'13:00','15:30','B202'),
+(38,2,7,9,'13:00','15:30','B202'),
+(38,4,7,9,'13:00','15:30','B202'),
  
 -- class 39 | subject 9 | 2 buổi/tuần
-(39,3,10,12,'15:15','17:30','A103'),
-(39,7,10,12,'15:15','17:30','A103'),
+(39,2,10,12,'15:40','17:30','A103'),
+(39,6,10,12,'15:40','17:30','A103'),
  
 -- class 40 | subject 10 | 2 buổi/tuần
-(40,6,4,6,'10:10','12:40','B202'),
-(40,4,7,9,'13:00','15:30','B202'),
+(40,5,4,6,'10:10','12:40','B202'),
+(40,3,7,9,'13:00','15:30','B202'),
  
 -- class 41 | subject 11 | 2 buổi/tuần
-(41,4,10,12,'15:15','17:30','A104'),
-(41,6,10,12,'15:15','17:30','A104'),
+(41,3,10,12,'15:40','17:30','A104'),
+(41,5,10,12,'15:40','17:30','A104'),
  
 -- class 42 | subject 12 | 2 buổi/tuần
-(42,5,10,12,'15:15','17:30','A103'),
-(42,7,4,6,'10:10','12:40','A103'),
+(42,4,10,12,'15:40','17:30','A103'),
+(42,6,4,6,'10:10','12:40','A103'),
  
 -- class 43 | subject 13 | 1 buổi/tuần
-(43,6,4,6,'10:10','12:40','A102'),
+(43,5,4,6,'10:10','12:40','A102'),
  
 -- class 44 | subject 14 | 2 buổi/tuần
-(44,6,1,3,'07:00','09:15','B203'),
-(44,2,7,9,'13:00','15:30','B203'),
+(44,5,1,3,'07:00','09:15','B203'),
+(44,1,7,9,'13:00','15:30','B203'),
  
 -- class 45 | subject 15 | 1 buổi/tuần
-(45,2,7,9,'13:00','15:30','B203'),
+(45,1,7,9,'13:00','15:30','B203'),
  
 -- class 46 | subject 15 | 1 buổi/tuần
-(46,6,7,9,'13:00','15:30','A101'),
+(46,5,7,9,'13:00','15:30','A101'),
  
 -- class 47 | subject 16 | 1 buổi/tuần
-(47,6,7,9,'13:00','15:30','A101'),
+(47,5,7,9,'13:00','15:30','A101'),
  
 -- class 48 | subject 16 | 1 buổi/tuần
-(48,4,4,6,'10:10','12:40','B202'),
+(48,3,4,6,'10:10','12:40','B202'),
  
 -- class 49 | subject 17 | 1 buổi/tuần
-(49,6,1,3,'07:00','09:15','A103'),
+(49,5,1,3,'07:00','09:15','A103'),
  
 -- class 50 | subject 17 | 1 buổi/tuần
-(50,2,1,3,'07:00','09:15','B202'),
+(50,1,1,3,'07:00','09:15','B202'),
  
 -- class 51 | subject 18 | 1 buổi/tuần
-(51,6,4,6,'10:10','12:40','B201'),
+(51,5,4,6,'10:10','12:40','B201'),
  
 -- class 52 | subject 19 | 1 buổi/tuần
-(52,4,4,6,'10:10','12:40','B204'),
+(52,3,4,6,'10:10','12:40','B204'),
  
 -- class 53 | subject 20 | 2 buổi/tuần
-(53,2,10,12,'15:15','17:30','B203'),
-(53,3,4,6,'10:10','12:40','B203'),
+(53,1,10,12,'15:40','17:30','B203'),
+(53,2,4,6,'10:10','12:40','B203'),
  
 -- class 54 | subject 20 | 2 buổi/tuần
-(54,5,4,6,'10:10','12:40','A102'),
-(54,4,7,9,'13:00','15:30','A102'),
+(54,4,4,6,'10:10','12:40','A102'),
+(54,3,7,9,'13:00','15:30','A102'),
  
 -- class 55 | subject 21 | 2 buổi/tuần
-(55,2,4,6,'10:10','12:40','B201'),
-(55,6,4,6,'10:10','12:40','B201'),
+(55,1,4,6,'10:10','12:40','B201'),
+(55,5,4,6,'10:10','12:40','B201'),
  
 -- class 56 | subject 21 | 2 buổi/tuần
-(56,7,1,3,'07:00','09:15','B201'),
-(56,3,4,6,'10:10','12:40','B201'),
+(56,6,1,3,'07:00','09:15','B201'),
+(56,2,4,6,'10:10','12:40','B201'),
  
 -- class 57 | subject 22 | 2 buổi/tuần
-(57,2,1,3,'07:00','09:15','B204'),
-(57,6,10,12,'15:15','17:30','B204'),
+(57,1,1,3,'07:00','09:15','B204'),
+(57,5,10,12,'15:40','17:30','B204'),
  
 -- class 58 | subject 22 | 2 buổi/tuần
-(58,4,4,6,'10:10','12:40','A103'),
-(58,6,4,6,'10:10','12:40','A103'),
+(58,3,4,6,'10:10','12:40','A103'),
+(58,5,4,6,'10:10','12:40','A103'),
  
 -- class 59 | subject 23 | 2 buổi/tuần
-(59,2,7,9,'13:00','15:30','B201'),
-(59,7,10,12,'15:15','17:30','B201'),
+(59,1,7,9,'13:00','15:30','B201'),
+(59,6,10,12,'15:40','17:30','B201'),
  
 -- class 60 | subject 23 | 2 buổi/tuần
-(60,4,4,6,'10:10','12:40','A104'),
-(60,7,1,3,'07:00','09:15','A104'),
+(60,3,4,6,'10:10','12:40','A104'),
+(60,6,1,3,'07:00','09:15','A104'),
  
 -- class 61 | subject 24 | 2 buổi/tuần
-(61,5,1,3,'07:00','09:15','A103'),
-(61,3,10,12,'15:15','17:30','A103'),
+(61,4,1,3,'07:00','09:15','A103'),
+(61,2,10,12,'15:40','17:30','A103'),
  
 -- class 62 | subject 24 | 2 buổi/tuần
-(62,3,10,12,'15:15','17:30','A102'),
-(62,7,1,3,'07:00','09:15','A102'),
+(62,2,10,12,'15:40','17:30','A102'),
+(62,6,1,3,'07:00','09:15','A102'),
  
 -- class 63 | subject 25 | 1 buổi/tuần
-(63,3,10,12,'15:15','17:30','A103'),
+(63,2,10,12,'15:40','17:30','A103'),
  
 -- class 64 | subject 25 | 1 buổi/tuần
-(64,4,7,9,'13:00','15:30','B201'),
+(64,3,7,9,'13:00','15:30','B201'),
  
 -- class 65 | subject 26 | 2 buổi/tuần
-(65,2,10,12,'15:15','17:30','B205'),
-(65,3,4,6,'10:10','12:40','B205'),
+(65,1,10,12,'15:40','17:30','B205'),
+(65,2,4,6,'10:10','12:40','B205'),
  
 -- class 66 | subject 26 | 2 buổi/tuần
-(66,4,7,9,'13:00','15:30','A101'),
-(66,5,10,12,'15:15','17:30','A101'),
+(66,3,7,9,'13:00','15:30','A101'),
+(66,4,10,12,'15:40','17:30','A101'),
  
 -- class 67 | subject 27 | 2 buổi/tuần
+(67,1,7,9,'13:00','15:30','A102'),
 (67,2,7,9,'13:00','15:30','A102'),
-(67,3,7,9,'13:00','15:30','A102'),
  
 -- class 68 | subject 27 | 2 buổi/tuần
-(68,7,7,9,'13:00','15:30','B201'),
-(68,2,10,12,'15:15','17:30','B201'),
+(68,6,7,9,'13:00','15:30','B201'),
+(68,1,10,12,'15:40','17:30','B201'),
  
 -- class 69 | subject 28 | 2 buổi/tuần
-(69,6,4,6,'10:10','12:40','A105'),
-(69,7,1,3,'07:00','09:15','A105'),
+(69,5,4,6,'10:10','12:40','A105'),
+(69,6,1,3,'07:00','09:15','A105'),
  
 -- class 70 | subject 28 | 2 buổi/tuần
-(70,7,10,12,'15:15','17:30','A105'),
-(70,5,4,6,'10:10','12:40','A105'),
+(70,6,10,12,'15:40','17:30','A105'),
+(70,4,4,6,'10:10','12:40','A105'),
  
 -- class 71 | subject 29 | 2 buổi/tuần
-(71,6,10,12,'15:15','17:30','A103'),
-(71,2,4,6,'10:10','12:40','A103'),
+(71,5,10,12,'15:40','17:30','A103'),
+(71,1,4,6,'10:10','12:40','A103'),
  
 -- class 72 | subject 29 | 2 buổi/tuần
-(72,7,7,9,'13:00','15:30','A104'),
-(72,3,1,3,'07:00','09:15','A104'),
+(72,6,7,9,'13:00','15:30','A104'),
+(72,2,1,3,'07:00','09:15','A104'),
  
 -- class 73 | subject 30 | 1 buổi/tuần
-(73,2,1,3,'07:00','09:15','B202'),
+(73,1,1,3,'07:00','09:15','B202'),
  
 -- class 74 | subject 30 | 1 buổi/tuần
-(74,3,4,6,'10:10','12:40','A104'),
+(74,2,4,6,'10:10','12:40','A104'),
  
 -- class 75 | subject 31 | 2 buổi/tuần
-(75,2,7,9,'13:00','15:30','A105'),
-(75,3,10,12,'15:15','17:30','A105'),
+(75,1,7,9,'13:00','15:30','A105'),
+(75,2,10,12,'15:40','17:30','A105'),
  
 -- class 76 | subject 31 | 2 buổi/tuần
-(76,2,1,3,'07:00','09:15','A103'),
-(76,6,10,12,'15:15','17:30','A103'),
+(76,1,1,3,'07:00','09:15','A103'),
+(76,5,10,12,'15:40','17:30','A103'),
  
 -- class 77 | subject 32 | 2 buổi/tuần
-(77,2,4,6,'10:10','12:40','B203'),
-(77,6,4,6,'10:10','12:40','B203'),
+(77,1,4,6,'10:10','12:40','B203'),
+(77,5,4,6,'10:10','12:40','B203'),
  
 -- class 78 | subject 32 | 2 buổi/tuần
-(78,5,4,6,'10:10','12:40','B201'),
 (78,4,4,6,'10:10','12:40','B201'),
+(78,3,4,6,'10:10','12:40','B201'),
  
 -- class 79 | subject 33 | 2 buổi/tuần
-(79,7,10,12,'15:15','17:30','A104'),
-(79,3,1,3,'07:00','09:15','A104'),
+(79,6,10,12,'15:40','17:30','A104'),
+(79,2,1,3,'07:00','09:15','A104'),
  
 -- class 80 | subject 33 | 2 buổi/tuần
-(80,6,4,6,'10:10','12:40','B202'),
-(80,3,4,6,'10:10','12:40','B202'),
+(80,5,4,6,'10:10','12:40','B202'),
+(80,2,4,6,'10:10','12:40','B202'),
  
 -- class 81 | subject 34 | 2 buổi/tuần
-(81,7,4,6,'10:10','12:40','B203'),
-(81,3,7,9,'13:00','15:30','B203'),
+(81,6,4,6,'10:10','12:40','B203'),
+(81,2,7,9,'13:00','15:30','B203'),
  
 -- class 82 | subject 34 | 2 buổi/tuần
-(82,7,1,3,'07:00','09:15','A103'),
-(82,3,4,6,'10:10','12:40','A103'),
+(82,6,1,3,'07:00','09:15','A103'),
+(82,2,4,6,'10:10','12:40','A103'),
  
 -- class 83 | subject 35 | 2 buổi/tuần
-(83,3,10,12,'15:15','17:30','B204'),
-(83,5,1,3,'07:00','09:15','B204'),
+(83,2,10,12,'15:40','17:30','B204'),
+(83,4,1,3,'07:00','09:15','B204'),
  
 -- class 84 | subject 35 | 2 buổi/tuần
-(84,4,7,9,'13:00','15:30','A104'),
-(84,6,7,9,'13:00','15:30','A104'),
+(84,3,7,9,'13:00','15:30','A104'),
+(84,5,7,9,'13:00','15:30','A104'),
  
 -- class 85 | subject 36 | 1 buổi/tuần
-(85,3,1,3,'07:00','09:15','B203'),
+(85,2,1,3,'07:00','09:15','B203'),
  
 -- class 86 | subject 36 | 1 buổi/tuần
-(86,2,10,12,'15:15','17:30','A101'),
+(86,1,10,12,'15:40','17:30','A101'),
  
 -- class 87 | subject 37 | 2 buổi/tuần
-(87,4,4,6,'10:10','12:40','A101'),
-(87,2,7,9,'13:00','15:30','A101'),
+(87,3,4,6,'10:10','12:40','A101'),
+(87,1,7,9,'13:00','15:30','A101'),
  
 -- class 88 | subject 37 | 2 buổi/tuần
-(88,4,7,9,'13:00','15:30','A103'),
-(88,2,7,9,'13:00','15:30','A103'),
+(88,3,7,9,'13:00','15:30','A103'),
+(88,1,7,9,'13:00','15:30','A103'),
  
 -- class 89 | subject 38 | 2 buổi/tuần
-(89,7,7,9,'13:00','15:30','A104'),
-(89,2,4,6,'10:10','12:40','A104'),
+(89,6,7,9,'13:00','15:30','A104'),
+(89,1,4,6,'10:10','12:40','A104'),
  
 -- class 90 | subject 38 | 2 buổi/tuần
-(90,5,4,6,'10:10','12:40','B201'),
-(90,7,7,9,'13:00','15:30','B201'),
+(90,4,4,6,'10:10','12:40','B201'),
+(90,6,7,9,'13:00','15:30','B201'),
  
 -- class 91 | subject 39 | 2 buổi/tuần
-(91,4,4,6,'10:10','12:40','B204'),
-(91,5,1,3,'07:00','09:15','B204'),
+(91,3,4,6,'10:10','12:40','B204'),
+(91,4,1,3,'07:00','09:15','B204'),
  
 -- class 92 | subject 39 | 2 buổi/tuần
-(92,4,4,6,'10:10','12:40','A101'),
-(92,3,1,3,'07:00','09:15','A101'),
+(92,3,4,6,'10:10','12:40','A101'),
+(92,2,1,3,'07:00','09:15','A101'),
  
 -- class 93 | subject 40 | 2 buổi/tuần
-(93,2,7,9,'13:00','15:30','B202'),
-(93,4,10,12,'15:15','17:30','B202');
+(93,1,7,9,'13:00','15:30','B202'),
+(93,3,10,12,'15:40','17:30','B202');
 
 -- exam_schedules
 INSERT INTO exam_schedules
-(id, subject_id, semester_id, exam_date, start_time, end_time, exam_room, exam_format, exam_location, exam_type)
+(subject_id, semester_id, exam_date, start_time, end_time, exam_room, exam_format, exam_location, exam_type)
 VALUES
-(1,32,4,'2025-12-29','08:00','10:00','A101','OFFLINE','Cơ sở 1','Final'),
-(2,7,4,'2025-12-29','13:00','15:00','A102','OFFLINE','Cơ sở 1','Final'),
-(3,8,4,'2025-12-30','09:00','11:00','B201','OFFLINE','Cơ sở 1','Final'),
-(4,9,4,'2025-12-30','13:00','15:00','A103','OFFLINE','Cơ sở 1','Final'),
-(5,10,4,'2026-01-02','13:00','15:00','B203','OFFLINE','Cơ sở 1','Final'),
-(6,11,4,'2026-01-02','16:00','18:00','A701','OFFLINE','Cơ sở 1','Final'),
-(7,12,4,'2026-01-03','08:00','10:30','B601','OFFLINE','Cơ sở 1','Final'),
-(8,13,4,'2026-01-03','13:00','15:00','A702','OFFLINE','Cơ sở 1','Final'),
-(9,14,4,'2026-01-04','13:00','15:00','B203','OFFLINE','Cơ sở 1','Final'),
+(32,4,'2025-12-29','08:00','10:00','A101','OFFLINE','Cơ sở 1','FINAL'),
+(7,4,'2025-12-29','13:00','15:00','A102','OFFLINE','Cơ sở 1','FINAL'),
+(8,4,'2025-12-30','09:00','11:00','B201','OFFLINE','Cơ sở 1','FINAL'),
+(9,4,'2025-12-30','13:00','15:00','A103','OFFLINE','Cơ sở 1','FINAL'),
+(10,4,'2026-01-02','13:00','15:00','B203','OFFLINE','Cơ sở 1','FINAL'),
+(11,4,'2026-01-02','16:00','18:00','A701','OFFLINE','Cơ sở 1','FINAL'),
+(12,4,'2026-01-03','08:00','10:30','B601','OFFLINE','Cơ sở 1','FINAL'),
+(13,4,'2026-01-03','13:00','15:00','A702','OFFLINE','Cơ sở 1','FINAL'),
+(14,4,'2026-01-04','13:00','15:00','B203','OFFLINE','Cơ sở 1','FINAL'),
 
-(10,18,5,'2026-04-26','08:00','10:00','A302','OFFLINE','Cơ sở 1','Final'),
-(11,19,5,'2026-04-27','13:00','15:00','A303','OFFLINE','Cơ sở 1','Final'),
-(12,20,5,'2026-03-27','09:00','11:00','B501','OFFLINE','Cơ sở 1','Midterm'),
-(13,21,5,'2026-04-28','08:00','10:00','A401','OFFLINE','Cơ sở 1','Final'),
-(14,22,5,'2026-04-29','13:00','15:00','A502','OFFLINE','Cơ sở 1','Final'),
-(15,23,5,'2026-04-30','13:00','15:00','B503','OFFLINE','Cơ sở 1','Final'),
-(16,24,5,'2026-05-01','08:00','10:00','A501','OFFLINE','Cơ sở 1','Final'),
-(17,25,5,'2026-05-02','13:00','15:00','A702','OFFLINE','Cơ sở 1','Final'),
-(18,26,5,'2026-05-03','13:00','15:00','B702','OFFLINE','Cơ sở 1','Final'),
+(18,5,'2026-04-26','08:00','10:00','A302','OFFLINE','Cơ sở 1','FINAL'),
+(19,5,'2026-04-27','13:00','15:00','A303','OFFLINE','Cơ sở 1','FINAL'),
+(20,5,'2026-03-27','09:00','11:00','B501','OFFLINE','Cơ sở 1','MIDTERM'),
+(21,5,'2026-04-28','08:00','10:00','A401','OFFLINE','Cơ sở 1','FINAL'),
+(22,5,'2026-04-29','13:00','15:00','A502','OFFLINE','Cơ sở 1','FINAL'),
+(23,5,'2026-04-30','13:00','15:00','B503','OFFLINE','Cơ sở 1','FINAL'),
+(24,5,'2026-05-01','08:00','10:00','A501','OFFLINE','Cơ sở 1','FINAL'),
+(25,5,'2026-05-02','13:00','15:00','A702','OFFLINE','Cơ sở 1','FINAL'),
+(26,5,'2026-05-03','13:00','15:00','B702','OFFLINE','Cơ sở 1','FINAL'),
 
-(19,30,6,'2026-08-24','08:00','10:00','A101','OFFLINE','Cơ sở 1','Final'),
-(20,31,6,'2026-08-25','13:00','15:00','A102','OFFLINE','Cơ sở 1','Final'),
-(21,32,6,'2026-08-26','09:00','11:00','B504','OFFLINE','Cơ sở 1','Final'),
-(22,33,6,'2026-08-27','08:00','10:00','B504','OFFLINE','Cơ sở 1','Final'),
-(23,34,6,'2026-08-28','13:00','15:00','A708','OFFLINE','Cơ sở 1','Final'),
-(24,35,6,'2026-08-29','08:00','10:00','A706','OFFLINE','Cơ sở 1','Final');
+(30,6,'2026-08-24','08:00','10:00','A101','OFFLINE','Cơ sở 1','FINAL'),
+(31,6,'2026-08-25','13:00','15:00','A102','OFFLINE','Cơ sở 1','FINAL'),
+(32,6,'2026-08-26','09:00','11:00','B504','OFFLINE','Cơ sở 1','FINAL'),
+(33,6,'2026-08-27','08:00','10:00','B504','OFFLINE','Cơ sở 1','FINAL'),
+(34,6,'2026-08-28','13:00','15:00','A708','OFFLINE','Cơ sở 1','FINAL'),
+(35,6,'2026-08-29','08:00','10:00','A706','OFFLINE','Cơ sở 1','FINAL');
 
 -- student_exam_registrations
 INSERT INTO student_exam_registrations
@@ -1305,6 +1326,15 @@ VALUES
 (2, 25, 5, 2, 9.5, 8.8, 7.0, 7.8, 3.5, 'B+', true),
 (2, 26, 5, 2, 9.6, 7.5, 7.6, 7.8, 3.5, 'B+', true),
 
+(3, 33, 3, 3, 8.0, 7.5, 7.8, 7.8, 3.0, 'B', true),
+(3, 32, 3, 2, 6.5, 5.8, 6.2, 6.2, 1.5, 'C', true),
+(3, 31, 3, 2, 9.0, 8.5, 8.8, 8.8, 3.5, 'B+', true),
+(3, 29, 3, 1, 5.5, 6.0, 5.8, 5.8, 1.5, 'C', true),
+(3, 30, 3, 2, 7.0, 3.5, 4.0, 4.2, 0.0, 'F', false),
+(3, 6,  3, 2, 8.5, 9.0, 8.7, 8.7, 3.5, 'B+', true),
+(3, 28, 3, 2, 6.0, 5.5, 5.8, 5.8, 1.5, 'C', true),
+(3, 27, 3, 2, 9.5, 9.2, 9.4, 9.4, 4.0, 'A', true),
+
 (3, 7, 4, 3, 5.0, 5.2, 4.7, 4.9, 0.7, 'D', true),
 (3, 8, 4, 2, 7.4, 3.2, 2.9, 3.4, 0.0, 'F', false),
 (3, 9, 4, 2, 4.6, 3.4, 4.9, 4.4, 0.7,'D',true),
@@ -1334,94 +1364,140 @@ VALUES
 (1, 2, 5, 29, 29, 2.73, 'B', 81, 7.7, 'B', 6.7, 'C'),
 (2, 5, 4, 23, 23, 3.65, 'A', 91, 9.3, 'A', 9.4, 'A'),
 (2, 5, 5, 29, 29, 3.5, 'B+', 91, 8.7, 'A', 8.1, 'B'),
+(3, 1, 3, 16, 14, 2.47, 'C+', 75, 7.2, 'B', 7.0, 'B'),
 (3, 5, 4, 23, 17, 0.71, 'D', 59, 5.4, 'D', 6.0, 'C'),
 (3, 5, 5, 29, 23, 0.74, 'D', 60, 6.1, 'C', 5.8, 'C');
 
 -- application_types
 INSERT INTO application_types (code, name)
 VALUES
-('LEAVE','Xin nghi hoc'),
-('GRADE_REVIEW','Phuc khao diem'),
-('CERT','Xin giay xac nhan');
+--1--
+('LEAVE','Xin nghỉ học'),
+--2--
+('RESUME', 'Xin học lại'),
+--3--
+('TRANSFER', 'Xin chuyển ngành/chuyên ngành'),
+--4--
+('TRANSFER_SCHOOL', 'Xin chuyển trường'),
+--5--
+('TUITION_DEFER', 'Xin gia hạn đóng học phí'),
+--6--
+('TUITION_EXEMPT', 'Xin miễn giảm học phí'),
+--7--
+('DORM', 'Xin ở ký túc xá'),
+--8--
+('CERT_STUDY', 'Xin xác nhận sinh viên'),
+--9--
+('CERT_GRAD', 'Xin xác nhận tốt nghiệp'),
+--10--
+('TRANSCRIPT', 'Xin cấp bảng điểm'),
+--11--
+('DIPLOMA_COPY', 'Xin cấp bản sao bằng tốt nghiệp'),
+--12--
+('RETAKE', 'Xin học lại môn học'),
+--13--
+('MAKEUP_EXAM', 'Xin thi lại/thi bù'),
+--14--
+('GRADE_REVIEW', 'Xin phúc khảo điểm thi'),
+--15--
+('COURSE_REG', 'Xin đăng ký môn học ngoài thời hạn'),
+--16--
+('PERSONAL_INFO', 'Xin chỉnh sửa thông tin cá nhân'),
+--17--
+('INTERNSHIP', 'Xin xác nhận thực tập');
 
 -- student_applications
 INSERT INTO student_applications
 (student_id, application_type_id, content, status)
 VALUES
-(1,1,'Xin nghi vi om','PENDING'),
-(2,2,'Phuc khao mon Java','APPROVED'),
-(3,3,'Xin giay xac nhan sinh vien','PENDING'),
-(5,1,'Xin nghi viec gia dinh','REJECTED');
+(3, 8,'Xin giấy xác nhận sinh viên','PENDING'),
+(1, 1,  'Em xin phép nghỉ học từ ngày 16/06/2026 đến 20/06/2026 do bị ốm, có giấy xác nhận của bệnh viện đính kèm.', 'PENDING'),
+(2, 9,  'Em xin cấp giấy xác nhận tốt nghiệp để nộp cho công ty khi đi làm.', 'APPROVED'),
+(3, 10, 'Em xin cấp bảng điểm toàn khóa để nộp hồ sơ xin học bổng sau đại học.', 'PENDING'),
+(1, 14, 'Em xin phúc khảo bài thi môn Toán cao cấp học kỳ 2 năm học 2025-2026, mã môn MATH102.', 'REJECTED'),
+(1, 8,  'Em xin xác nhận đang là sinh viên trường để làm thủ tục vay vốn ngân hàng.', 'APPROVED'),
+(3, 6,  'Em xin miễn giảm học phí học kỳ 1 năm học 2026-2027 theo diện hộ nghèo.', 'PENDING'),
+(2, 13, 'Em xin thi lại môn Vật lý đại cương do bị ốm đúng ngày thi, có giấy phép của bác sĩ.', 'APPROVED');
 
 -- application_attachments
 INSERT INTO application_attachments
-(application_id, file_key, original_filename, file_size)
+(application_id, file_key, original_filename, file_size, resource_type)
 VALUES
-(1,'file1.pdf','don_xin_nghi.pdf',123456),
-(2,'file2.pdf','phuc_khao.pdf',223456),
-(3,'file3.pdf','giay_xac_nhan.pdf',323456);
+(1,'don_xac_nhan_sv_A45044.pdf','don_xac_nhan_sv_A45044.pdf',143360,'image'),
+(2,'giay_xac_nhan_benh_vien_A45033.pdf','giay_xac_nhan_benh_vien_A45035.pdf',245760,'image'),
+(3,'don_xac_nhan_tot_nghiep_A45035.pdf','don_xac_nhan_tot_nghiep_A45035.pdf',163840,'image'),
+(4,'don_xin_bang_diem_A45044.pdf','don_xin_bang_diem_A45044.pdf',172032,'image'),
+(5,'don_phuc_khao_diem_thi.pdf','don_phuc_khao_diem_thi.pdf',153600,'image'),
+(6,'don_xac_nhan_sv_A45044.pdf','don_xac_nhan_sv_A45044.pdf',143360,'image'),
+(7,'don_mien_giam_hoc_phi.pdf','don_mien_giam_hoc_phi.pdf',196608,'image'),
+(8,'don_xin_thi_lai.pdf','don_xin_thi_lai.pdf',153600,'image');
 
 -- notification_templates
 INSERT INTO notification_templates (code, name, content) VALUES
-('GENERAL', 'Thong bao chung', '{{content}}'),
-('EXAM', 'Thong bao lich thi', 'Lich thi: {{content}}'),
-('FEE', 'Nhac nop hoc phi', 'Sinh vien can nop hoc phi truoc {{deadline}}'),
-('SCHOLARSHIP', 'Thong bao hoc bong', '{{content}}'),
-('ACADEMIC_WARNING', 'Canh bao hoc vu', '{{content}}'),
-('DEFENSE', 'Thong bao bao ve do an', '{{content}}');
+
+('APP_APPROVED', 'Đơn được duyệt', 'Đơn {{application_type}} mã #{{application_id}} của bạn đã được phê duyệt. Vui lòng đến phòng Công tác Sinh viên để hoàn tất thủ tục.'),
+('APP_REJECTED', 'Đơn bị từ chối', 'Đơn {{application_type}} mã #{{application_id}} của bạn đã bị từ chối. Lý do: {{reason}}. Vui lòng liên hệ phòng Công tác Sinh viên để biết thêm chi tiết.'),
+('APP_ADDITIONAL_DOCS', 'Yêu cầu bổ sung hồ sơ', 'Đơn {{application_type}} mã #{{application_id}} của bạn cần bổ sung thêm giấy tờ: {{required_docs}}. Vui lòng nộp bổ sung trước ngày {{deadline}}.'),
+
+('TUITION_REMINDER', 'Nhắc nhở đóng học phí', 'Học kỳ {{semester}} sắp đến hạn đóng học phí. Số tiền cần đóng: {{amount}} VNĐ. Hạn chót: {{deadline}}. Vui lòng đóng đúng hạn để tránh bị khóa tài khoản học vụ.'),
+('TUITION_OVERDUE', 'Quá hạn đóng học phí', 'Tài khoản của bạn hiện có học phí chưa thanh toán cho học kỳ {{semester}}. Vui lòng đến phòng Tài vụ hoặc thanh toán online trước ngày {{deadline}} để tránh bị đình chỉ học.'),
+('COURSE_REG_OPEN', 'Mở đăng ký môn học', 'Hệ thống đăng ký môn học học kỳ {{semester}} sẽ mở từ {{start_date}} đến {{end_date}}. Vui lòng đăng nhập và đăng ký đúng thời hạn.'),
+
+
+('EXAM_SCHEDULE', 'Lịch thi', 'Lịch thi học kỳ {{semester}} đã được cập nhật. Môn thi gần nhất: {{subject}} vào lúc {{time}} ngày {{date}} tại phòng {{room}}.'),
+('EXAM_ROOM_CHANGE', 'Thay đổi phòng thi', 'Phòng thi môn {{subject}} ngày {{date}} đã được thay đổi từ phòng {{old_room}} sang phòng {{new_room}}. Vui lòng lưu ý.'),
+('GRADE_PUBLISHED', 'Điểm thi đã có', 'Điểm thi học kỳ {{semester}} đã được công bố. Vui lòng đăng nhập hệ thống để xem điểm.'),
+
+('SCHOLARSHIP_OPEN', 'Mở xét học bổng', 'Chương trình học bổng {{scholarship_name}} học kỳ {{semester}} đã mở nhận hồ sơ từ {{start_date}} đến {{end_date}}. Vui lòng nộp hồ sơ đúng hạn.'),
+('SCHOLARSHIP_RESULT', 'Kết quả xét học bổng', 'Kết quả xét học bổng {{scholarship_name}} đã được công bố. {{result}}. Vui lòng kiểm tra chi tiết trên cổng thông tin sinh viên.');
 
 -- notifications
-INSERT INTO notifications
-(id, title, content, created_by, target_type, deadline, is_important, reference_type)
+INSERT INTO notifications (title, content, created_by, target_type, reference_type, is_important, deadline)
 VALUES
 
 -- GLOBAL
-(1,'Thong bao he thong','He thong se bao tri vao 23:00 toi nay','SYSTEM','GLOBAL',NULL, false, null),
-(2,'Cap nhat cong thong tin','Da cap nhat giao dien moi','SYSTEM','GLOBAL',NULL, false, null),
-(3,'Thong bao nghi le','Sinh vien nghi le quoc khanh','SYSTEM','GLOBAL',NULL, false, null),
-(4,'Lich thi HK1','Lich thi da duoc cap nhat tren portal','SYSTEM','GLOBAL','2024-01-05', true, 'EXAM_SCHEDULE'),
-(5,'Ket qua hoc bong','Danh sach hoc bong HK1 da duoc cong bo','SYSTEM','GLOBAL',NULL, false, null),
+('Lịch nghỉ lễ 30/4 - 1/5 năm 2026',
+ 'Nhà trường thông báo lịch nghỉ lễ 30/4 - 1/5 năm 2026 từ ngày 30/04/2026 đến hết ngày 01/05/2026. Sinh viên vui lòng sắp xếp việc học bù (nếu có) theo thông báo của giảng viên.',
+ 'SYSTEM', 'GLOBAL', NULL, FALSE, '2026-04-29'),
+('Mở đăng ký môn học học kỳ 1 năm học 2026-2027',
+ 'Hệ thống đăng ký môn học học kỳ 1 năm học 2026-2027 sẽ mở từ ngày 20/06/2026 đến ngày 30/06/2026. Sinh viên vui lòng đăng nhập cổng thông tin để đăng ký đúng thời hạn. Sau thời hạn trên hệ thống sẽ tự động đóng.',
+ 'SYSTEM', 'GLOBAL', NULL, FALSE, '2026-06-30'),
+('Hạn chót đóng học phí học kỳ phụ năm học 2025-2026',
+ 'Nhà trường thông báo hạn chót đóng học phí học kỳ phụ năm học 2025-2026 là ngày 20/06/2026. Sinh viên chưa hoàn thành học phí sẽ bị khóa tài khoản học vụ và không được thi cuối kỳ.',
+ 'SYSTEM', 'GLOBAL', 'TUITION', TRUE, '2026-06-20'),
 
--- STUDENT_CLASS
-(6,'Canh bao hoc vu','Ket qua hoc tap duoi muc yeu cau','SYSTEM','STUDENT_CLASS','2024-03-01', true, null),
-(7,'Canh bao hoc vu lan 2','Sinh vien can gap co van hoc tap','SYSTEM','STUDENT_CLASS','2024-03-10', true, null),
-(8,'Thong bao rieng','Sinh vien duoc chon tham gia workshop','SYSTEM','STUDENT_CLASS','2024-03-10', false, null),
-(9,'Thong bao rieng','Sinh vien duoc cap tai khoan lab','SYSTEM','STUDENT_CLASS','2024-03-10', false, null),
-(10,'Thong bao rieng','Sinh vien cap nhat thong tin ca nhan','SYSTEM','STUDENT_CLASS','2024-03-10', false, null),
+-- Thông báo theo khoa
+('Họp sinh viên toàn khoa Công nghệ thông tin',
+ 'Khoa Công nghệ thông tin thông báo tổ chức buổi họp sinh viên toàn khoa vào lúc 14:00 ngày 18/06/2026 tại hội trường A. Nội dung: triển khai kế hoạch thực tập và khóa luận tốt nghiệp năm học 2026-2027. Sinh viên vắng mặt phải có lý do chính đáng.',
+ 'FACULTY', 'FACULTY', NULL, FALSE, '2026-06-18'),
 
--- COURSE_CLASS
-(11,'Thong bao mon hoc','Lop lap trinh web thay doi phong hoc','LECTURER','COURSE_CLASS','2024-03-10', false, null),
-(12,'Thong bao mon hoc','Buoi hoc toi se hoc online','LECTURER','COURSE_CLASS','2024-03-10', false, null),
-(13,'Thong bao mon hoc','Deadline project duoc gia han','LECTURER','COURSE_CLASS','2024-04-10', false, null),
+('Danh sách sinh viên đủ điều kiện dự thi cuối kỳ',
+ 'Khoa thông báo danh sách sinh viên đủ điều kiện dự thi cuối kỳ học kỳ 2 năm học 2025-2026 đã được đăng tải trên cổng thông tin. Sinh viên không có tên trong danh sách vui lòng liên hệ văn phòng khoa trước ngày 19/06/2026.',
+ 'FACULTY', 'FACULTY', NULL, FALSE, '2026-06-19'),
 
--- FACULTY
-(14,'Thong bao khoa CNTT','Sinh vien tham gia hoi thao AI','FACULTY','FACULTY',NULL, false, null),
-(15,'Thong bao khoa CNTT','Cuoc thi lap trinh sap dien ra','FACULTY','FACULTY',NULL, false, null),
-(16,'Thong bao khoa CNTT','Mo dang ky CLB AI','FACULTY','FACULTY',NULL, false, null),
-(17,'Thong bao khoa CNTT','Workshop Cloud Computing','FACULTY','FACULTY',NULL, false, null),
-(18,'Thong bao khoa CNTT','Sinh vien dang ky thuc tap he','FACULTY','FACULTY',NULL, false, null);
+-- Thông báo theo lớp học phần
+('Thay đổi phòng thi môn Cơ sở dữ liệu',
+ 'Thông báo thay đổi phòng thi cuối kỳ môn Cơ sở dữ liệu (CS201) từ phòng B202 sang phòng C101. Thời gian thi giữ nguyên: 7:30 ngày 22/06/2026. Sinh viên lưu ý cập nhật.',
+ 'FACULTY', 'COURSE_CLASS', NULL, FALSE, '2026-06-22'),
+('Nộp báo cáo đồ án môn Lập trình Web',
+ 'Giảng viên môn Lập trình Web (CS305) thông báo hạn nộp báo cáo đồ án cuối kỳ là 23:59 ngày 21/06/2026 qua hệ thống. Bài nộp trễ sẽ bị trừ 10 điểm/ngày.',
+ 'LECTURER', 'COURSE_CLASS', NULL, FALSE, '2026-06-21'),
+
+-- Thông báo cá nhân sinh viên
+('Đơn xin phúc khảo của bạn đã bị từ chối',
+ 'Đơn xin phúc khảo điểm thi môn Toán cao cấp (MATH102) mã #4 của bạn đã bị từ chối do không đủ điều kiện theo quy định. Vui lòng liên hệ phòng Công tác Sinh viên để biết thêm chi tiết.',
+ 'SYSTEM', 'STUDENT', NULL, FALSE, NULL);
 
 -- notification_targets
 INSERT INTO notification_targets (notification_id, target_id) VALUES
 
--- STUDENT_CLASS (id 6 -> 10)
-(6, 2),
-(7, 2),
-(8, 3),
-(9, 4),
-(10, 5),
+(4, 1),
+(5, 1),
+(6, 29),
+(7, 8),
+(8, 1);
 
--- COURSE_CLASS (id 11 -> 13)
-(11, 10),
-(12, 10),
-(13, 10),
 
--- FACULTY (id 14 -> 18)
-(14, 1),
-(15, 1),
-(16, 1),
-(17, 1),
-(18, 1);
 
 -- notification_read
 INSERT INTO notification_read (notification_id, oauth_user_id, read_at) VALUES
@@ -1435,12 +1511,8 @@ INSERT INTO notification_read (notification_id, oauth_user_id, read_at) VALUES
 
 (5,3,now()),
 (6,3,now()),
-(7,3,now()),
+(7,3,now());
 
-(10,4,now()),
-(11,4,now()),
-
-(15,5,now());
 
 INSERT INTO grade_scale (min_score, max_score, letter_grade) VALUES
 (9.50, 10.00, 'A+'),
@@ -1484,73 +1556,170 @@ VALUES
 
 -- tuition_invoices
 INSERT INTO tuition_invoices
-(id, student_id, semester_id, due_date, total_amount, final_amount, status, created_at, updated_at)
+(student_id, semester_id, due_date, total_amount, final_amount, status, created_at, updated_at)
 VALUES
 
-(1, 1, 4, '2026-01-10', 4500000, 4500000, 'UNPAID', '2025-12-01', '2025-12-05'),
+( 1, 4, '2025-09-27', 10528000, 10528000, 'PAID', '2025-09-01', '2025-09-10'),
 
-(2, 2, 1, '2026-01-05', 4200000, 4200000, 'OVERDUE', '2025-12-01', '2026-01-06'),
+( 2, 4, '2025-09-27', 10528000, 10528000, 'PAID', '2025-09-01', '2025-09-10'),
 
--- chưa thanh toán (còn hạn)
-(3, 1, 1, '2026-01-15', 4300000, 4300000, 'UNPAID', '2025-12-01', '2025-12-01'),
+( 3, 4, '2025-09-27', 10528000, 10528000, 'OVERDUE', '2025-09-01', '2026-01-06'),
+
+( 4, 4, '2026-09-27', 10528000, 10528000, 'UNPAID', '2025-12-01', '2025-12-01'),
 
 -- học kỳ sau
-(4, 4, 2, '2026-05-01', 5000000, 5000000, 'UNPAID', '2026-03-01', '2026-03-01'),
+( 1, 5, '2026-01-27', 16296000, 16296000, 'PAID', '2025-12-01', '2026-01-10'),
 
--- đã thanh toán học kỳ sau
-(5, 5, 2, '2026-05-01', 5200000, 5200000, 'PAID', '2026-03-01', '2026-03-10'),
+( 2, 5, '2026-01-27', 16296000, 16296000, 'PAID', '2025-12-01', '2026-01-10'),
 
--- bị hủy
-(6, 6, 1, '2026-01-10', 4000000, 4000000, 'CANCELLED', '2025-12-01', '2025-12-20');
+( 3, 5, '2026-01-27', 16296000, 16296000, 'PAID', '2025-12-01', '2026-01-06'),
+
+( 4, 5, '2026-01-27', 16296000, 16296000, 'PAID', '2025-12-01', '2026-01-06'),
+
+-- học kỳ sau
+( 1, 6, '2026-06-30', 11424000, 11424000, 'UNPAID', '2026-05-01', '2026-05-01'),
+
+( 2, 6, '2026-06-30', 11424000, 11424000, 'UNPAID', '2026-05-01', '2026-05-01'),
+
+( 3, 6, '2026-06-30', 11424000, 11424000, 'UNPAID', '2026-05-01', '2026-05-01'),
+
+( 4, 6, '2026-06-30', 11424000, 11424000, 'UNPAID', '2026-05-01', '2026-05-01'),
+
+( 3, 3, '2026-06-30', 10000, 10000, 'UNPAID', '2026-05-01', '2026-05-01');
 
 -- tuition_invoice_items
 INSERT INTO tuition_invoice_items
 (invoice_id, course_class_id, price_per_credit, credits, coefficient, amount, created_at, updated_at)
 VALUES
--- invoice 1 (đã paid)
-(1, 1, 500000, 3, 1.0, 1500000, '2025-12-01', '2025-12-01'),
-(1, 2, 520000, 3, 1.0, 1560000, '2025-12-01', '2025-12-01'),
-(1, 3, 480000, 3, 1.0, 1440000, '2025-12-01', '2025-12-01'),
 
--- invoice 2 (overdue)
-(2, 1, 500000, 3, 1.0, 1500000, '2025-12-01', '2025-12-01'),
-(2, 2, 520000, 3, 1.0, 1560000, '2025-12-01', '2025-12-01'),
+(1, 2, 560000, 3, 1.0, 1680000, '2025-12-01', '2025-12-01'),
+(1, 3, 560000, 2, 1.0, 1120000, '2025-12-01', '2025-12-01'),
+(1, 4, 560000, 2, 1.0, 1120000, '2025-12-01', '2025-12-01'),
+(1, 5, 560000, 1, 1.0, 560000, '2025-12-01', '2025-12-01'),
+(1, 6, 560000, 2, 1.5, 1680000, '2025-12-01', '2025-12-01'),
+(1, 7, 560000, 2, 1.5, 1680000, '2025-12-01', '2025-12-01'),
+(1, 8, 560000, 2, 1.2, 1344000, '2025-12-01', '2025-12-01'),
+(1, 9, 560000, 2, 1.2, 1344000, '2025-12-01', '2025-12-01'),
 
--- invoice 3 (unpaid)
-(3, 4, 700000, 3, 1.0, 2100000, '2025-12-01', '2025-12-01'),
-(3, 5, 750000, 3, 1.0, 2250000, '2025-12-01', '2025-12-01'),
+(2, 2, 560000, 3, 1.0, 1680000, '2025-12-01', '2025-12-01'),
+(2, 3, 560000, 2, 1.0, 1120000, '2025-12-01', '2025-12-01'),
+(2, 4, 560000, 2, 1.0, 1120000, '2025-12-01', '2025-12-01'),
+(2, 5, 560000, 1, 1.0, 560000, '2025-12-01', '2025-12-01'),
+(2, 6, 560000, 2, 1.5, 1680000, '2025-12-01', '2025-12-01'),
+(2, 7, 560000, 2, 1.5, 1680000, '2025-12-01', '2025-12-01'),
+(2, 8, 560000, 2, 1.2, 1344000, '2025-12-01', '2025-12-01'),
+(2, 9, 560000, 2, 1.2, 1344000, '2025-12-01', '2025-12-01'),
 
--- invoice 4 (future semester)
-(4, 6, 450000, 3, 1.0, 1350000, '2026-03-01', '2026-03-01'),
+(3, 2, 560000, 3, 1.0, 1680000, '2025-12-01', '2025-12-01'),
+(3, 3, 560000, 2, 1.0, 1120000, '2025-12-01', '2025-12-01'),
+(3, 4, 560000, 2, 1.0, 1120000, '2025-12-01', '2025-12-01'),
+(3, 5, 560000, 1, 1.0, 560000, '2025-12-01', '2025-12-01'),
+(3, 6, 560000, 2, 1.5, 1680000, '2025-12-01', '2025-12-01'),
+(3, 7, 560000, 2, 1.5, 1680000, '2025-12-01', '2025-12-01'),
+(3, 8, 560000, 2, 1.2, 1344000, '2025-12-01', '2025-12-01'),
+(3, 9, 560000, 2, 1.2, 1344000, '2025-12-01', '2025-12-01'),
 
--- invoice 5 (paid future)
-(5, 4, 700000, 3, 1.0, 2100000, '2026-03-01', '2026-03-01'),
-(5, 5, 750000, 3, 1.0, 2250000, '2026-03-01', '2026-03-01'),
+(4, 2, 560000, 3, 1.0, 1680000, '2025-12-01', '2025-12-01'),
+(4, 3, 560000, 2, 1.0, 1120000, '2025-12-01', '2025-12-01'),
+(4, 4, 560000, 2, 1.0, 1120000, '2025-12-01', '2025-12-01'),
+(4, 5, 560000, 1, 1.0, 560000, '2025-12-01', '2025-12-01'),
+(4, 6, 560000, 2, 1.5, 1680000, '2025-12-01', '2025-12-01'),
+(4, 7, 560000, 2, 1.5, 1680000, '2025-12-01', '2025-12-01'),
+(4, 8, 560000, 2, 1.2, 1344000, '2025-12-01', '2025-12-01'),
+(4, 9, 560000, 2, 1.2, 1344000, '2025-12-01', '2025-12-01'),
 
--- invoice 6 (cancelled)
-(6, 1, 500000, 3, 1.0, 1500000, '2025-12-01', '2025-12-01');
+(5, 13, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(5, 14, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(5, 15, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(5, 16, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(5, 17, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(5, 18, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(5, 19, 560000, 3, 1.2, 2016000, '2026-01-10', '2026-01-10'),
+(5, 20, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(5, 21, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+
+(6, 13, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(6, 14, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(6, 15, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(6, 16, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(6, 17, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(6, 18, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(6, 19, 560000, 3, 1.2, 2016000, '2026-01-10', '2026-01-10'),
+(6, 20, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(6, 21, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+
+(7, 13, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(7, 14, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(7, 15, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(7, 16, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(7, 17, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(7, 18, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(7, 19, 560000, 3, 1.2, 2016000, '2026-01-10', '2026-01-10'),
+(7, 20, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(7, 21, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+
+(8, 13, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(8, 14, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(8, 15, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(8, 16, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(8, 17, 560000, 3, 1.5, 2520000, '2026-01-10', '2026-01-10'),
+(8, 18, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(8, 19, 560000, 3, 1.2, 2016000, '2026-01-10', '2026-01-10'),
+(8, 20, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+(8, 21, 560000, 2, 1.2, 1344000, '2026-01-10', '2026-01-10'),
+
+(9, 25, 560000, 2, 1.2, 1344000, '2026-05-10', '2026-05-10'),
+(9, 26, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(9, 27, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(9, 28, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(9, 29, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(9, 30, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+
+(10, 25, 560000, 2, 1.2, 1344000, '2026-05-10', '2026-05-10'),
+(10, 26, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(10, 27, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(10, 28, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(10, 29, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(10, 30, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+
+(11, 25, 560000, 2, 1.2, 1344000, '2026-05-10', '2026-05-10'),
+(11, 26, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(11, 27, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(11, 28, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(11, 29, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(11, 30, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+
+(12, 25, 560000, 2, 1.2, 1344000, '2026-05-10', '2026-05-10'),
+(12, 26, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(12, 27, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(12, 28, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(12, 29, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+(12, 30, 560000, 3, 1.2, 2016000, '2026-05-10', '2026-05-10'),
+
+(13, 31, 1000, 3, 1.0, 3000, '2025-12-01', '2025-12-01'),
+(13, 32, 1000, 2, 1.0, 2000, '2025-12-01', '2025-12-01'),
+(13, 33, 1000, 2, 1.0, 2000, '2025-12-01', '2025-12-01'),
+(13, 34, 1000, 1, 1.0, 1000, '2025-12-01', '2025-12-01'),
+(13, 35, 1000, 2, 1.0, 2000, '2025-12-01', '2025-12-01'),
+(13, 36, 1000, 2, 1.0, 2000, '2025-12-01', '2025-12-01'),
+(13, 37, 1000, 2, 1.0, 2000, '2025-12-01', '2025-12-01'),
+(13, 38, 1000, 2, 1.0, 2000, '2025-12-01', '2025-12-01');
 
 -- payment
 INSERT INTO payment
 (invoice_id, amount, provider, transaction_code, status, created_at, updated_at)
 VALUES
--- invoice 1: thanh toán thành công
-(1, 4500000, 'ZALOPAY', 'TXN_001_SUCCESS', 'SUCCESS', '2025-12-05', '2025-12-05'),
 
--- invoice 2: thanh toán thất bại
-(2, 4200000, 'ZALOPAY', 'TXN_002_FAIL', 'FAILED', '2025-12-07', '2025-12-07'),
+(1, 10528000, 'ZALOPAY', 'TXN_001_SUCCESS', 'SUCCESS', '2025-09-26', '2025-09-26'),
+(2, 10528000, 'ZALOPAY', 'TXN_002_SUCCESS', 'FAILED', '2025-09-26', '2025-09-26'),
+(2, 10528000, 'ZALOPAY', 'TXN_003_SUCCESS', 'PENDING', '2025-09-26', '2025-09-26'),
+(3, 10528000, 'VNPAY', 'TXN_004_SUCCESS', 'PENDING', '2025-09-26', '2025-09-26'),
+(5, 16296000, 'VNPAY', 'TXN_005_SUCCESS', 'SUCCESS', '2026-01-10', '2026-01-10'),
+(6, 16296000, 'ZALOPAY', 'TXN_006_SUCCESS', 'SUCCESS', '2026-01-10', '2026-01-10'),
+(7, 16296000, 'ZALOPAY', 'TXN_007_SUCCESS', 'SUCCESS', '2026-01-10', '2026-01-10'),
+(8, 16296000, 'VNPAY', 'TXN_008_SUCCESS', 'SUCCESS', '2026-01-10', '2026-01-10'),
+(9, 11424000, 'VNPAY', 'TXN_009_SUCCESS', 'SUCCESS', '2026-05-01', '2026-05-01');
 
--- retry nhưng vẫn pending
-(2, 4200000, 'ZALOPAY', 'TXN_002_PENDING', 'PENDING', '2025-12-08', '2025-12-08'),
-
--- invoice 3: user vừa tạo thanh toán (chưa xong)
-(3, 4300000, 'VNPAY', 'TXN_003_PENDING', 'PENDING', '2025-12-09', '2025-12-09'),
-
--- invoice 5: thanh toán thành công (future semester)
-(5, 5200000, 'VNPAY', 'TXN_005_SUCCESS', 'SUCCESS', '2026-03-10', '2026-03-10'),
-
--- invoice 6: đã từng thanh toán nhưng bị hủy/refund sau
-(6, 4000000, 'ZALOPAY', 'TXN_006_SUCCESS', 'SUCCESS', '2025-12-10', '2025-12-10');
 
 -- tuition_transactions
 INSERT INTO tuition_transactions
@@ -1558,48 +1727,68 @@ INSERT INTO tuition_transactions
 VALUES
 -- ===== INVOICE 1 =====
 -- phát sinh học phí
-(1, 1, 4500000, 'TUITION', 1, 'INVOICE', 'Tao hoa don hoc phi HK1', '2025-12-01'),
+(1, 1, 10528000, 'TUITION', 1, 'INVOICE', 'Tao hoa don hoc phi HK1', '2025-12-01'),
 
 -- thanh toán
-(1, 1, 4500000, 'PAYMENT', 1, 'PAYMENT', 'Thanh toan qua ZaloPay', '2025-12-05'),
+(1, 1, 10528000, 'PAYMENT', 1, 'PAYMENT', 'Thanh toan qua ZaloPay', '2025-12-05'),
 
 -- ===== INVOICE 2 =====
-(2, 2, 4200000, 'TUITION', 2, 'INVOICE', 'Hoc phi HK1', '2025-12-01'),
+(2, 2, 10528000, 'TUITION', 2, 'INVOICE', 'Hoc phi HK1', '2025-12-01'),
 
 -- failed payment
-(2, 2, 4200000, 'PAYMENT', 2, 'PAYMENT', 'Thanh toan that bai', '2025-12-07'),
+(2, 2, 10528000, 'PAYMENT', 2, 'PAYMENT', 'Thanh toan that bai', '2025-12-07'),
 
 -- ===== INVOICE 3 =====
-(3, 3, 4300000, 'TUITION', 3, 'INVOICE', 'Hoc phi HK1', '2025-12-01'),
+(3, 3, 10528000, 'TUITION', 3, 'INVOICE', 'Hoc phi HK1', '2025-12-01'),
 
 -- pending payment (chưa ghi nhận success)
-(3, 3, 4300000, 'PAYMENT', 4, 'PAYMENT', 'Dang xu ly thanh toan', '2025-12-09'),
+(3, 3, 10528000, 'PAYMENT', 4, 'PAYMENT', 'Dang xu ly thanh toan', '2025-12-09'),
 
 -- ===== INVOICE 5 =====
-(5, 5, 5200000, 'TUITION', 5, 'INVOICE', 'Hoc phi HK2', '2026-03-01'),
+(5, 5, 16296000, 'TUITION', 5, 'INVOICE', 'Hoc phi HK2', '2026-03-01'),
 
-(5, 5, 5200000, 'PAYMENT', 5, 'PAYMENT', 'Thanh toan ngan hang', '2026-03-10'),
+(5, 5, 16296000, 'PAYMENT', 5, 'PAYMENT', 'Thanh toan ngan hang', '2026-03-10'),
 
 -- ===== INVOICE 6 (cancel + refund) =====
-(6, 6, 4000000, 'TUITION', 6, 'INVOICE', 'Hoc phi HK1', '2025-12-01'),
+(6, 6, 16296000, 'TUITION', 6, 'INVOICE', 'Hoc phi HK1', '2025-12-01'),
 
 -- đã thanh toán
-(6, 6, 4000000, 'PAYMENT', 6, 'PAYMENT', 'Thanh toan thanh cong', '2025-12-10'),
+(6, 6, 16296000, 'PAYMENT', 6, 'PAYMENT', 'Thanh toan thanh cong', '2025-12-10'),
 
 -- refund
-(6, 6, -4000000, 'REFUND', 6, 'PAYMENT', 'Hoan tien do huy hoa don', '2025-12-20');
+(6, 6, -16296000, 'REFUND', 6, 'PAYMENT', 'Hoan tien do huy hoa don', '2025-12-20');
 
 INSERT INTO subject_prerequisite_groups
-(id, subject_id, min_subjects_required, description)
+(subject_id, min_subjects_required, description)
 VALUES
 
-(1, 6, 1, 'Cần học học phần mã AD213'),
-(2, 9, 1, 'Cần học học phần mã GF101'),
-(3, 20, 1, 'Cần học học phần mã CS100'),
-(4, 21, 1, 'Cần học học phần mã CS121'),
-(5, 22, 1, 'Cần học học phần mã CS122'),
-(6, 23, 1, 'Cần học học phần mã GE111'),
-(7, 24, 1, 'Cần học học phần mã MA101');
+( 6, 1, 'Cần học học phần mã AD213'),
+( 9, 1, 'Cần học học phần mã GF101'),
+( 20, 1, 'Cần học học phần mã CS100'),
+( 21, 1, 'Cần học học phần mã CS121'),
+( 22, 1, 'Cần học học phần mã SE302'),
+( 23, 1, 'Cần học học phần mã GE111'),
+( 24, 1, 'Cần học học phần mã MA101'),
+( 26, 1, 'Cần học học phần mã GE112'),
+( 27, 1, 'Cần học học phần mã MA120'),
+(28, 1, 'Cần học học phần mã MA110'),
+(29, 1, 'Cần học học phần mã CS122'),
+(31, 1, 'Cần học học phần mã MA101'),
+(32, 1, 'Cần học học phần mã CS122'),
+(33, 1, 'Cần học học phần mã GE121'),
+(34, 2, 'Cần học 2 học phần mã CS121, MA101'),
+(35, 1, 'Cần học học phần mã MA120'),
+(37, 1, 'Cần học học phần mã NW212'),
+(38, 1, 'Cần học học phần mã IS222'),
+(39, 1, 'Cần học học phần mã IS222'),
+(40, 1, 'Cần học học phần mã CS121'),
+(41, 1, 'Cần học học phần mã MA239'),
+(42, 1, 'Cần học học phần mã CS212'),
+(43, 1, 'Cần học học phần mã MI201'),
+(44, 2, 'Cần học 2 học phần mã CS122, IS222'),
+(45, 2, 'Cần học 2 học phần mã CS122, MA120'),
+(46, 1, 'Cần học học phần mã MI201'),
+(47, 1, 'Cần học học phần mã IS332');
 
 INSERT INTO subject_prerequisite_group_items
 (group_id, prerequisite_subject_id)
@@ -1609,23 +1798,46 @@ VALUES
 (2, 8),
 (3, 11),
 (4, 20),
-(5,40),
+(5, 47),
 (6, 14),
-(7, 15);
+(7, 15),
+(8, 23),
+(9, 24),
+(10, 27),
+(11, 40),
+(12, 15),
+(13, 40),
+(14, 26),
+(15, 20),
+(15, 15),
+(16, 24),
+(17, 42),
+(18, 34),
+(19, 34),
+(20, 20),
+(21, 35),
+(22, 21),
+(23, 29),
+(24, 34),
+(24, 40),
+(25, 40),
+(25, 24),
+(26, 29),
+(27, 44);
 
 INSERT INTO subject_enrollment_conditions
 (subject_id, condition_type, condition_value, condition_operator, description, created_at, updated_at)
 VALUES
 
-(5, 'GPA', 2.50, '>=', 'Yeu cau GPA toi thieu 2.5', '2025-12-01', '2025-12-01'),
+(5, 'GPA', 2.50, '>=', 'Yêu cầu GPA tối thiểu 2.5', '2025-12-01', '2025-12-01'),
 
-(5, 'TOTAL_CREDITS', 30, '>=', 'Phai tich luy it nhat 30 tin chi', '2025-12-01', '2025-12-01'),
+(5, 'TOTAL_CREDITS', 30, '>=', 'Phải tích lũy ít nhất 30 tín chỉ', '2025-12-01', '2025-12-01'),
 
-(4, 'GPA', 2.00, '>', 'Yeu cau GPA > 2.0', '2025-12-01', '2025-12-01'),
+(4, 'GPA', 2.00, '>', 'Yêu cầu GPA > 2.0', '2025-12-01', '2025-12-01'),
 
-(6, 'TOTAL_CREDITS', 20, '>=', 'Yeu cau >= 20 tin chi', '2025-12-01', '2025-12-01'),
+(6, 'TOTAL_CREDITS', 20, '>=', 'Yêu cầu >= 20 tín chỉ', '2025-12-01', '2025-12-01'),
 
-(6, 'GPA', 2, '=', 'Yeu cau GPA toi thieu 2', '2025-12-01', '2025-12-01');
+(6, 'GPA', 2, '=', 'Yêu cầu GPA tối thiểu 2', '2025-12-01', '2025-12-01');
 
 INSERT INTO student_course_class_logs
 (student_id, course_class_id, action, from_status, to_status, created_at)
@@ -1664,31 +1876,15 @@ INSERT INTO feedback_category
 (name, description, is_active, created_at, updated_at)
 VALUES
 
--- ===== BUG REPORT =====
-(
-    'BUG',
-    'Phản hồi liên quan đến lỗi hệ thống hoặc chức năng ứng dụng',
-    TRUE,
-    '2026-01-01 08:00:00',
-    '2026-01-01 08:00:00'
-),
+('Chất lượng giảng dạy', 'Phản hồi về chất lượng giảng dạy của giảng viên, nội dung môn học, phương pháp giảng dạy.', TRUE, now(), now()),
+('Cơ sở vật chất', 'Phản hồi về phòng học, thiết bị, thư viện, khu vực học tập và các tiện ích trong trường.', TRUE, now(), now()),
+('Dịch vụ hành chính', 'Phản hồi về thủ tục hành chính, thái độ phục vụ của cán bộ, thời gian xử lý hồ sơ.', TRUE, now(), now()),
+('Dịch vụ căng tin', 'Phản hồi về chất lượng đồ ăn, vệ sinh an toàn thực phẩm, giá cả và thái độ phục vụ tại căng tin.', TRUE, now(), now()),
+('Lỗi ứng dụng', 'Báo cáo lỗi kỹ thuật, sự cố hệ thống, tính năng hoạt động không đúng trên ứng dụng.', TRUE, now(), now()),
+('Giao diện & trải nghiệm', 'Phản hồi về giao diện người dùng, độ thân thiện, tốc độ tải trang và trải nghiệm sử dụng ứng dụng.', TRUE, now(), now()),
+('Tính năng mới', 'Đề xuất thêm tính năng mới hoặc cải tiến tính năng hiện có trên ứng dụng.', TRUE, now(), now()),
+('Học bổng & hỗ trợ tài chính', 'Phản hồi về quy trình xét học bổng, hỗ trợ vay vốn và các chính sách tài chính dành cho sinh viên.', TRUE, now(), now()),
+('Hoạt động ngoại khóa', 'Phản hồi về các câu lạc bộ, sự kiện, hoạt động thể thao và phong trào sinh viên.', TRUE, now(), now()),
+('Khác', 'Các phản hồi không thuộc các danh mục trên.', TRUE, now(), now());
 
--- ===== UI/UX =====
-(
-    'UI_UX',
-    'Phản hồi liên quan đến giao diện và trải nghiệm người dùng',
-    TRUE,
-    '2026-01-01 08:10:00',
-    '2026-01-01 08:10:00'
-),
-
--- ===== ACCOUNT SUPPORT =====
-(
-    'ACCOUNT',
-    'Các vấn đề liên quan đến tài khoản người dùng',
-    TRUE,
-    '2026-01-01 08:15:00',
-    '2026-01-01 08:15:00'
-);
-
- COMMIT;
+COMMIT;

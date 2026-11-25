@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,6 +48,7 @@ import com.tl_connect.dev.shared.common.exception.ConflictException;
 import com.tl_connect.dev.shared.common.exception.ErrorException;
 import com.tl_connect.dev.shared.common.exception.NotFoundException;
 import com.tl_connect.dev.modules.payment.service.interfaces.PaymentService;
+import com.tl_connect.dev.modules.realtime.payment.dto.PaymentSuccessEvent;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -63,6 +65,7 @@ public class PaymentServiceImpl implements PaymentService {
     private final StringRedisTemplate redisTemplate;
     private final PaymentFactory paymentFactory;
     private final NotificationModifyService notificationModifyService;
+    private final ApplicationEventPublisher publisher;
 
     @Transactional
     public CreateTuitionPaymentResDTO createPayment(Long studentId, CreateTuitionPaymentReqDTO req) throws Exception {
@@ -171,6 +174,7 @@ public class PaymentServiceImpl implements PaymentService {
 
         CreateNotificationReqDTO req = CreateNotificationReqDTO.builder()
                 .title("Thanh toán học phí thành công")
+                .content(String.format("Bạn đã thanh toán học phí thành công %s - %s", payment.getProvider(), payment.getTransactionCode()))
                 .createdBy(NotificationCreatedBy.SYSTEM)
                 .targetType(NotificationType.STUDENT)
                 .targetIds(List.of(invoice.getStudentId()))
@@ -178,6 +182,14 @@ public class PaymentServiceImpl implements PaymentService {
                 .build();
             
         notificationModifyService.sendNotification(req);
+
+        publisher.publishEvent(
+                PaymentSuccessEvent.builder()
+                        .userId(invoice.getStudentId())
+                        .tuitionId(invoice.getId())
+                        .transactionCode(payment.getTransactionCode())
+                        .build()
+        );
 
         log.info("Payment SUCCESS: invoiceId={}, transId={}", invoice.getId(), callback.getTransactionId());
     }

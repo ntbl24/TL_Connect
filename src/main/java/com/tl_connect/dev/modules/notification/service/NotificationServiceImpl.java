@@ -30,7 +30,7 @@ import com.tl_connect.dev.modules.student.service.interfaces.StudentService;
 import com.tl_connect.dev.shared.common.dto.PagedResponse;
 import com.tl_connect.dev.shared.common.enums.NotificationType;
 import com.tl_connect.dev.shared.common.exception.NotFoundException;
-import com.tl_connect.dev.shared.common.ultility.NotificationHelper;
+import com.tl_connect.dev.shared.ultility.NotificationHelper;
 import com.tl_connect.dev.modules.notification.service.interfaces.NotificationService;
 
 @Service
@@ -69,13 +69,13 @@ public class NotificationServiceImpl implements NotificationService {
                 .build();
     }
 
-    public PagedResponse<SummaryNotifyDTO> getAllNotification(Long studentId, NotificationReqDTO notificationReqDTO, Pageable pageable) {
+    public PagedResponse<SummaryNotifyDTO> getAllNotification(Long studentId, NotificationReqDTO notificationReqDTO, String search, Pageable pageable) {
 
         if (notificationReqDTO.getCourseClassIds() == null || notificationReqDTO.getCourseClassIds().isEmpty()) {
             notificationReqDTO.setCourseClassIds(List.of(-1L));
         }
 
-        Page<NotificationRow> notificationRows = notificationRepository.findAllNotificationByStudent(studentId, notificationReqDTO.getOauthUserId(), notificationReqDTO.getStudentClassId(), notificationReqDTO.getFacultyId(), notificationReqDTO.getCourseClassIds(), pageable);
+        Page<NotificationRow> notificationRows = notificationRepository.findAllNotificationByStudent(studentId, notificationReqDTO.getOauthUserId(), notificationReqDTO.getStudentClassId(), notificationReqDTO.getFacultyId(), notificationReqDTO.getCourseClassIds(), pageable, search);
 
         List<SummaryNotifyDTO> notificationList = notificationRows.stream()
                 .map(notificationRow -> SummaryNotifyDTO.builder()

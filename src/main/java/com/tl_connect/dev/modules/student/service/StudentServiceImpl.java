@@ -92,6 +92,7 @@ public class StudentServiceImpl implements StudentService {
                 StudentChatInfoView student = studentRepository.findStudentChatInfoByCode(code)
                         .orElseThrow(() -> new NotFoundException("Student not found with code: " + code));
                 return StudentChatInfoDTO.builder()
+                        .avatarUrl(student.getAvatarUrl())
                         .studentCode(student.getStudentCode())
                         .fullName(student.getFullName())
                         .classCode(student.getClassCode())
@@ -166,6 +167,7 @@ public class StudentServiceImpl implements StudentService {
         private StudentInfoDTO toDTO(StudentInfoView student) {
                 return StudentInfoDTO.builder()
                                 .studentCode(student.getStudentCode())
+                                .avatarUrl(student.getAvatarUrl())
                                 .fullName(student.getFullName())
                                 .dateOfBirth(student.getDateOfBirth())
                                 .gender(student.getGender())
@@ -272,5 +274,12 @@ public class StudentServiceImpl implements StudentService {
                 throw new NotFoundException("Student not found: " + studentId);
             }
             return aiContext;
+        }
+
+        public Page<Student> findStudentByFacultyCode(Pageable pageable, String facultyCode){
+            if(facultyCode == null || facultyCode.isBlank()) {
+                facultyCode = null;
+            }
+            return studentRepository.findByFacultyCode(pageable, facultyCode);
         }
 }

@@ -6,6 +6,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +22,7 @@ import com.tl_connect.dev.shared.common.enums.ResponseStatus;
 import com.tl_connect.dev.shared.common.exception.ErrorException;
 import com.tl_connect.dev.shared.common.exception.NotFoundException;
 import com.tl_connect.dev.modules.notification.service.interfaces.NotificationModifyService;
-import com.tl_connect.dev.modules.notification.service.interfaces.NotificationPushService;
+import com.tl_connect.dev.modules.realtime.notification.dto.NotificationCreatedEvent;
 
 import lombok.RequiredArgsConstructor;
 
@@ -30,8 +31,8 @@ import lombok.RequiredArgsConstructor;
 public class NotificationModifyServiceImpl implements NotificationModifyService {
 
     private final NotificationRepository notificationRepository;
-    private final NotificationPushService notificationPushService;
     private final NotificationTargetRepository notificationTargetRepository;
+    private final ApplicationEventPublisher publisher;
 
     @Transactional
     public void sendNotification(CreateNotificationReqDTO req) {
@@ -40,12 +41,38 @@ public class NotificationModifyServiceImpl implements NotificationModifyService 
 
         if(type == NotificationType.GLOBAL) {
             Notification notification = buildNotification(req);
-            notificationRepository.save(notification);
-            notificationPushService.pushNotifications(notification, null);
+            try{
+                notificationRepository.save(notification);
+            }
+            catch(DataIntegrityViolationException e){
+                throw new ErrorException(ResponseStatus.DATABASE_ERROR,"Failed to create notification");
+            }
+            publisher.publishEvent(
+                NotificationCreatedEvent.builder()
+                        .id(notification.getId())
+                        .title(notification.getTitle())
+                        .content(notification.getContent())
+                        .createdBy(notification.getCreatedBy())
+                        .targetType(req.getTargetType())
+                        .isImportant(notification.getIsImportant())
+                        .referenceType(notification.getReferenceType())
+                        .deadLine(notification.getDeadLine())
+                        .createdAt(notification.getCreatedAt())
+                        .targetIds(null)
+                        .build()
+            );
             return;
         }
     
         Notification notification = buildNotification(req);
+
+        try{
+            notification = notificationRepository.save(notification);
+        }
+        catch(DataIntegrityViolationException e){
+            throw new ErrorException(ResponseStatus.DATABASE_ERROR,"Failed to create notification" + e.getMessage());
+        }
+
         List<NotificationTarget> notificationTargets = new ArrayList<>();
 
         for(Long targetId : req.getTargetIds()){
@@ -54,14 +81,27 @@ public class NotificationModifyServiceImpl implements NotificationModifyService 
         }
 
         try{
-            notificationRepository.save(notification);
             notificationTargetRepository.saveAll(notificationTargets);
         }
         catch(DataIntegrityViolationException e){
             throw new ErrorException(ResponseStatus.DATABASE_ERROR,"Failed to create notification" + e.getMessage());
         }
 
-        notificationPushService.pushNotifications(notification, req.getTargetIds());
+
+        publisher.publishEvent(
+                NotificationCreatedEvent.builder()
+                        .id(notification.getId())
+                        .title(notification.getTitle())
+                        .content(notification.getContent())
+                        .createdBy(notification.getCreatedBy())
+                        .targetType(req.getTargetType())
+                        .isImportant(notification.getIsImportant())
+                        .referenceType(notification.getReferenceType())
+                        .deadLine(notification.getDeadLine())
+                        .createdAt(notification.getCreatedAt())
+                        .targetIds(req.getTargetIds())
+                        .build()
+        );
     }
 
     @Transactional

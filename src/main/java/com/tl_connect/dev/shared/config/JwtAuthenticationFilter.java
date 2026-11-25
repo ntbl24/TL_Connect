@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.util.List;
 
 import com.tl_connect.dev.modules.oauth.service.interfaces.JWTService;
-import com.tl_connect.dev.shared.common.types.JwtPayload;
-import com.tl_connect.dev.shared.common.types.JwtUserInfo;
+import com.tl_connect.dev.shared.types.JwtPayload;
+import com.tl_connect.dev.shared.types.JwtUserInfo;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,46 +32,47 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             throws ServletException, IOException {
 
         String path = request.getServletPath();
-        if (path.startsWith("/api/v1/oauth2/login") || path.startsWith("/api/v1/payments/callback")) {
+        if (path.startsWith("/api/v1/oauth2/login") || path.startsWith("/api/v1/payments/callback") || path.startsWith("/ws")) {
             filterChain.doFilter(request, response);
             return;
         }
+
 
         String header = request.getHeader("Authorization");
         if (header != null && header.startsWith("Bearer ")) {
             String token = header.substring(7);
             try {
-                JwtUserInfo userInfo = JwtUserInfo.builder()
-                        .userId(1L)
-                        .oauthUserId(1L)
-                        .roles(new ArrayList<>(List.of("ADMIN")))
-                        .build();
-
-                List<GrantedAuthority> authorities = userInfo.roles() == null 
-                    ? List.of()
-                    : userInfo.roles().stream()
-                        .map(r -> (GrantedAuthority) new SimpleGrantedAuthority("ROLE_" + r))
-                        .toList();
-
-                UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userInfo, null,
-                        authorities);
-
-                // JwtPayload payload = jwtService.verifyToken(token);
-
                 // JwtUserInfo userInfo = JwtUserInfo.builder()
-                //         .userId(payload.getUserId())
-                //         .oauthUserId(payload.getOauthUserId())
-                //         .roles(payload.getRoles())
+                //         .userId(1L)
+                //         .oauthUserId(1L)
+                //         .roles(new ArrayList<>(List.of("ADMIN")))
                 //         .build();
 
-                // List<GrantedAuthority> authorities = payload.getRoles() == null 
+                // List<GrantedAuthority> authorities = userInfo.roles() == null 
                 //     ? List.of()
-                //     : payload.getRoles().stream()
+                //     : userInfo.roles().stream()
                 //         .map(r -> (GrantedAuthority) new SimpleGrantedAuthority("ROLE_" + r))
                 //         .toList();
 
                 // UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userInfo, null,
                 //         authorities);
+
+                JwtPayload payload = jwtService.verifyToken(token);
+
+                JwtUserInfo userInfo = JwtUserInfo.builder()
+                        .userId(payload.getUserId())
+                        .oauthUserId(payload.getOauthUserId())
+                        .roles(payload.getRoles())
+                        .build();
+
+                List<GrantedAuthority> authorities = payload.getRoles() == null 
+                    ? List.of()
+                    : payload.getRoles().stream()
+                        .map(r -> (GrantedAuthority) new SimpleGrantedAuthority("ROLE_" + r))
+                        .toList();
+
+                UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(userInfo, null,
+                        authorities);
 
                 SecurityContextHolder.getContext().setAuthentication(auth);
             } catch (Exception e) {

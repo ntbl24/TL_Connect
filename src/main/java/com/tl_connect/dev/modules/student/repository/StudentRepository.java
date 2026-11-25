@@ -37,6 +37,7 @@ public interface StudentRepository extends JpaRepository<Student, Long>, JpaSpec
             SELECT
                 s.student_code AS studentCode,
                 s.full_name AS fullName,
+                s.avatar_url AS avatarUrl,
                 s.gender AS gender,
                 s.date_of_birth AS dateOfBirth,
                 c.class_code AS classCode,
@@ -208,6 +209,7 @@ public interface StudentRepository extends JpaRepository<Student, Long>, JpaSpec
 
     @Query(value = """
             SELECT
+                s.avatar_url AS avatarUrl,
                 s.student_code AS studentCode,
                 s.full_name AS fullName,
                 c.class_code AS classCode,
@@ -221,4 +223,20 @@ public interface StudentRepository extends JpaRepository<Student, Long>, JpaSpec
             WHERE s.student_code = :studentCode
             """, nativeQuery = true)
     Optional<StudentChatInfoView> findStudentChatInfoByCode(@Param("studentCode") String studentCode);
+
+    @Query(value = """
+        SELECT s.*
+        FROM students s
+        WHERE EXISTS (
+            SELECT 1
+            FROM student_majors sm
+            JOIN majors m ON sm.major_id = m.id
+            JOIN faculties f ON m.faculty_id = f.id
+            WHERE sm.student_id = s.id
+            AND (:facultyCode IS NULL OR f.faculty_code = :facultyCode)
+        )
+        ORDER BY s.student_code ASC 
+        """, nativeQuery = true)
+    Page<Student> findByFacultyCode(Pageable pageable, @Param("facultyCode") String facultyCode);
+
 }

@@ -21,6 +21,8 @@ import com.tl_connect.dev.modules.academic_result.repository.StudentSemesterSumm
 import com.tl_connect.dev.modules.academic_result.repository.StudentSubjectResultRepository;
 import com.tl_connect.dev.modules.academic_result.service.interfaces.AcademicResultExporter;
 import com.tl_connect.dev.modules.academic_result.service.interfaces.AcademicResultService;
+import com.tl_connect.dev.modules.student.entity.Student;
+import com.tl_connect.dev.modules.student.service.interfaces.StudentService;
 import com.tl_connect.dev.shared.common.dto.PagedResponse;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -28,6 +30,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -40,16 +43,17 @@ public class AcademicResultServiceImpl implements AcademicResultService {
         private final StudentSubjectResultRepository resultRepository;
         private final StudentSemesterSummaryRepository semesterSummaryRepository;
         private final AcademicResultExporter excelExporter;
+        private final StudentService studentService;
 
         @Override
         public PagedResponse<AcademicResultAdmDTO> getAllAcademicResult(Pageable pageable, String facultyCode) {
-                if(facultyCode == null || facultyCode.isBlank()){
-                        facultyCode = null;
-                }
-                
-                Page<SubjectResultAdmRow> subjectResultsRows = resultRepository.findSubjectResult(pageable, facultyCode);
 
-                List<Long> studentIds = subjectResultsRows.stream().map(SubjectResultAdmRow::getStudentId).collect(Collectors.toList());
+                Page<Student> students = studentService.findStudentByFacultyCode(pageable, facultyCode);
+                
+                List<Long> studentIds = students.getContent().stream().map(Student::getId).collect(Collectors.toList());
+
+                List<SubjectResultAdmRow> subjectResultsRows = resultRepository.findSubjectResultByStudentIds(studentIds);
+
                 List<SemesterSummaryRow> semesterSummaries = semesterSummaryRepository.findSemesterSummaryByStudentIds(studentIds);
 
                 Map<Long, Map<String, Map<String, List<SubjectResultAdmRow>>>> grouped =
@@ -65,21 +69,26 @@ public class AcademicResultServiceImpl implements AcademicResultService {
                                 ));
                 Map<String, SemesterSummaryRow> summaryMap = semesterSummaries.stream()
                 .collect(Collectors.toMap(
-                        s -> (String) (s.getStudentId() + "_" + s.getStudyProgramCode() + "_" + s.getSemester()),
+                        s -> String.format("%d_%s_%s", s.getStudentId(), s.getStudyProgramCode(), s.getSemester()),
                         s -> s
                 ));
 
                 List<AcademicResultAdmDTO> result = new ArrayList<>();
 
-                for (var studentEntry : grouped.entrySet()) {
-                        Long studentId = studentEntry.getKey();
+                for (Student s : students.getContent()) {
+                        Long studentId = s.getId();
 
                         AcademicResultAdmDTO student = new AcademicResultAdmDTO();
                         student.setStudentId(studentId);
+                        student.setStudentCode(s.getStudentCode());
+                        student.setStudentName(s.getFullName());
 
                         List<AcademicResultByStudyProgramDTO> programs = new ArrayList<>();
 
-                        for (var programEntry : studentEntry.getValue().entrySet()) {
+                        Map<String, Map<String, List<SubjectResultAdmRow>>> programMap =
+                                grouped.getOrDefault(studentId, Collections.emptyMap()); 
+                        
+                        for (var programEntry : programMap.entrySet()) {
                                 String studyProgramCode = programEntry.getKey();
 
                                 AcademicResultByStudyProgramDTO program = new AcademicResultByStudyProgramDTO();
@@ -94,32 +103,32 @@ public class AcademicResultServiceImpl implements AcademicResultService {
                                         semester.setSemester(semesterName);
 
                                         List<SubjectResultAdmRow> subjectResults = semesterEntry.getValue();
-                                        List<SubjectResultDTO> subjectResultDTOs = subjectResults.stream().map(s -> {
+                                        List<SubjectResultDTO> subjectResultDTOs = subjectResults.stream().map(row -> {
                                                 return SubjectResultDTO.builder()
-                                                                .id(s.getStudentSubjectResultId())
-                                                                .subjectCode(s.getSubjectCode())
-                                                                .subjectName(s.getSubjectName())
-                                                                .credits(s.getCredits())
-                                                                .attendanceScore(s.getAttendanceScore())
-                                                                .midtermScore(s.getMidtermScore())
-                                                                .finalScore(s.getFinalScore())
-                                                                .score10(s.getScore10())
-                                                                .score4(s.getScore4())
-                                                                .letterGrade(s.getLetterGrade())
-                                                                .isPass(s.getIsPass())
+                                                                .id(row.getStudentSubjectResultId())
+                                                                .subjectCode(row.getSubjectCode())
+                                                                .subjectName(row.getSubjectName())
+                                                                .credits(row.getCredits())
+                                                                .attendanceScore(row.getAttendanceScore())
+                                                                .midtermScore(row.getMidtermScore())
+                                                                .finalScore(row.getFinalScore())
+                                                                .score10(row.getScore10())
+                                                                .score4(row.getScore4())
+                                                                .letterGrade(row.getLetterGrade())
+                                                                .isPass(row.getIsPass())
                                                                 .build();
                                         }).collect(Collectors.toList());
 
-                                        student.setStudentCode(subjectResults.get(0).getStudentCode());
-                                        student.setStudentName(subjectResults.get(0).getStudentName());
-                                        student.setStartYear(subjectResults.get(0).getStartYear());
+                                        SubjectResultAdmRow first = subjectResults.get(0);
+                                        
+                                        student.setStartYear(first.getStartYear());
 
-                                        program.setStudyProgramName(subjectResults.get(0).getStudyProgramName());
-                                        program.setMajorName(subjectResults.get(0).getMajorName());
+                                        program.setStudyProgramName(first.getStudyProgramName());
+                                        program.setMajorName(first.getMajorName());
 
                                         semester.setSubjectResults(subjectResultDTOs);
 
-                                        String key = (String) (studentId + "_" + studyProgramCode + "_" + semesterName);
+                                        String key = String.format("%d_%s_%s", studentId, studyProgramCode, semesterName);
                                         SemesterSummaryRow summary = summaryMap.get(key);
 
                                         if (summary != null) {
@@ -139,18 +148,17 @@ public class AcademicResultServiceImpl implements AcademicResultService {
                                 }
 
                         student.setStudyPrograms(programs);
-                        
                         result.add(student);
                         }
 
                 return new PagedResponse<>(
                 result,
-                subjectResultsRows.getNumber(),
-                subjectResultsRows.getSize(),
-                subjectResultsRows.getTotalElements(),
-                subjectResultsRows.getTotalPages(),
-                subjectResultsRows.isFirst(),
-                subjectResultsRows.isLast());
+                students.getNumber(),
+                students.getSize(),
+                students.getTotalElements(),
+                students.getTotalPages(),
+                students.isFirst(),
+                students.isLast());
         }
 
         @Override

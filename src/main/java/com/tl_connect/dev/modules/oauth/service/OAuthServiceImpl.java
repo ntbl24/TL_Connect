@@ -1,5 +1,6 @@
 package com.tl_connect.dev.modules.oauth.service;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,10 +21,10 @@ import com.tl_connect.dev.modules.student.service.interfaces.StudentService;
 import com.tl_connect.dev.shared.common.exception.ForbiddenException;
 import com.tl_connect.dev.shared.common.exception.InvalidInputException;
 import com.tl_connect.dev.shared.common.exception.NotFoundException;
-import com.tl_connect.dev.shared.common.types.JwtUserInfo;
-import com.tl_connect.dev.shared.common.types.UserInfo;
-import com.tl_connect.dev.shared.common.ultility.AuthHelper;
-import com.tl_connect.dev.shared.common.ultility.TokenHelper;
+import com.tl_connect.dev.shared.types.JwtUserInfo;
+import com.tl_connect.dev.shared.types.UserInfo;
+import com.tl_connect.dev.shared.ultility.AuthHelper;
+import com.tl_connect.dev.shared.ultility.TokenHelper;
 import com.tl_connect.dev.modules.oauth.service.interfaces.JWTService;
 import com.tl_connect.dev.modules.oauth.service.interfaces.OAuthService;
 import com.tl_connect.dev.modules.oauth.service.interfaces.RefreshTokenService;
@@ -46,19 +47,18 @@ public class OAuthServiceImpl implements OAuthService {
     
     @Transactional
     public OAuthUserInfoDTO loginWithMicrosoft(LoginRequestDTO request) {
+        System.out.println("Token: " + request.getAccessToken());
         UserInfo userInfo = authHelper.extractUserInfo(request.getAccessToken());
 
         String microsoftId = userInfo.oid();
         String email = userInfo.email();
         String name = userInfo.name();
         List<String> roles = userInfo.roles();
-        String avatar = userInfo.avatar();
 
         // String microsoftId = "1deb00a9-835c-4ab7-a50f-57c12a56c7bd";
         // String email = "nhokthanh3211@gmail.com";
         // String name = "Nguyen Van A";
         // List<String> roles = Arrays.asList("ADMIN");
-        // String avatar = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
 
         if (microsoftId == null || microsoftId.isEmpty()) {
             throw new InvalidInputException("Oid not found in ID token");
@@ -66,11 +66,6 @@ public class OAuthServiceImpl implements OAuthService {
         if (email == null || email.isEmpty()) {
             throw new InvalidInputException("Email not found in ID token");
         }
-
-        System.out.println("microsoftId: " + microsoftId);
-        System.out.println("email: " + email);
-        System.out.println("name: " + name);
-        System.out.println("roles: " + roles);
 
         JwtUserInfo jwtUserInfo;
         if(roles.contains("STUDENT")) {
@@ -96,14 +91,10 @@ public class OAuthServiceImpl implements OAuthService {
                 .name(name)
                 .accessToken(accessToken)
                 .refreshToken(refreshToken)
-                .avatar(avatar)
                 .build();
     }
 
     private JwtUserInfo processStudentLogin(String microsoftId, String email, String name, List<String> roles, String deviceId, String fcmToken, String platform) {
-        System.out.println("deviceId: " + deviceId);
-        System.out.println("fcmToken: " + fcmToken);
-        System.out.println("platform: " + platform);
 
         if(deviceId == null || deviceId.isEmpty() || fcmToken == null || fcmToken.isEmpty()) {
             throw new InvalidInputException("Device ID and FCM token are required");
@@ -116,6 +107,7 @@ public class OAuthServiceImpl implements OAuthService {
         if (jwtUserInfoView.isPresent()) {
             jwtUserInfo = JwtUserInfo.builder()
                     .userId(jwtUserInfoView.get().getStudentId())
+                    .oauthUserId(jwtUserInfoView.get().getOauthUserId())
                     .roles(roles)
                     .build();
         } else {
@@ -135,10 +127,9 @@ public class OAuthServiceImpl implements OAuthService {
                     .build();
         }
 
-
         String devicePlatform = platform != null ? platform.toLowerCase() : "unknown";
 
-        userDeviceService.registerDevice(jwtUserInfoView.get().getOauthUserId(), deviceId, fcmToken, devicePlatform);
+        userDeviceService.registerDevice(jwtUserInfo.oauthUserId(), deviceId, fcmToken, devicePlatform);
 
         return jwtUserInfo;
     }

@@ -7,6 +7,7 @@ import java.time.LocalTime;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.tl_connect.dev.shared.common.enums.ExamType;
 import com.tl_connect.dev.shared.common.exception.InvalidInputException;
 
 import jakarta.persistence.*;
@@ -53,8 +54,9 @@ public class ExamSchedule {
     @Column(name = "exam_format")
     private String examFormat;
 
-    @Column(name = "exam_type")
-    private String examType;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "exam_type", nullable = false)
+    private ExamType examType;
 
     @Column(name = "note")
     private String note;
@@ -67,7 +69,7 @@ public class ExamSchedule {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    public static ExamSchedule create(Long subjectId, Long semesterId, LocalDate examDate, LocalTime startTime, LocalTime endTime, String examRoom, String examLocation, String examFormat, String examType, String note) {
+    public static ExamSchedule create(Long subjectId, Long semesterId, LocalDate examDate, LocalTime startTime, LocalTime endTime, String examRoom, String examLocation, String examFormat, ExamType examType, String note) {
         if(startTime.isAfter(endTime)){
             throw new InvalidInputException("Start time must be before end time");
         }
@@ -85,7 +87,7 @@ public class ExamSchedule {
         return examSchedule;
     }
 
-    public void update(Long subjectId, Long semesterId, LocalDate examDate, LocalTime startTime, LocalTime endTime, String examRoom, String examLocation, String examFormat, String examType, String note) {
+    public void update(Long subjectId, Long semesterId, LocalDate examDate, LocalTime startTime, LocalTime endTime, String examRoom, String examLocation, String examFormat, ExamType examType, String note) {
         LocalTime newStartTime = startTime != null ? startTime : this.startTime;
         LocalTime newEndTime = endTime != null ? endTime : this.endTime;
         if(newStartTime.isAfter(newEndTime)){
