@@ -3,10 +3,8 @@ package com.tl_connect.dev.modules.attendance.service;
 import java.time.LocalDateTime;
 import java.util.Map;
 
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
-import com.google.firebase.database.DatabaseException;
 import com.tl_connect.dev.modules.attendance.dto.AttendanceRequest;
 import com.tl_connect.dev.modules.attendance.entity.Attendance;
 import com.tl_connect.dev.modules.attendance.service.interfaces.AttendanceService;
@@ -35,7 +33,7 @@ public class CheckInServiceImpl implements CheckInServcie {
         Long classId = Long.parseLong(claims.get("classId"));
         String sessionId = claims.get("sessionId");
 
-        // validateGps(request.getLatitude(), request.getLongitude());
+        validateGps(request.getLatitude(), request.getLongitude());
 
         boolean existed = attendanceService.existsBySessionIdAndStudentId(sessionId, studentId);
         if (existed) {

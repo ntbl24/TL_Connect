@@ -150,15 +150,7 @@ public class EnrollServiceImpl implements EnrollService {
         EnrollmentValidationResult validation = preCheckService.validate(
                 studentId, courseClassId, studyProgramId, period);
 
-        StudentCourseClass saved = enrollTransactionService.execute(studentId, courseClassId, validation);
-
-        eventPublisher.publishEvent(new EnrollmentCreatedEvent(
-                studentId,
-                courseClassId,
-                saved.getSemesterId(),
-                validation.getOldStatus(),
-                saved.getStatus(),
-                validation.getScheduleIntervals()));
+        enrollTransactionService.execute(studentId, courseClassId, validation);
     }
 
     // -------------------------------------------------------------------------

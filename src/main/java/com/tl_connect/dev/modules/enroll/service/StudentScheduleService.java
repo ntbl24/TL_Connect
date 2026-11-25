@@ -55,8 +55,12 @@ public class StudentScheduleService {
             new TypeReference<List<ScheduleInterval>>() {},
             () -> studentCourseClassService.findCurrentSchedule(studentId, semesterId)
         );
+
+        log.info("Before add: {}", intervals.size());
         
         intervals.addAll(newSchedules);
+
+        log.info("After add: {}", intervals.size());
 
         cacheHelper.set(cacheKey, intervals, Duration.ofDays(7));
     }
@@ -70,8 +74,11 @@ public class StudentScheduleService {
             new TypeReference<List<ScheduleInterval>>() {},
             () -> studentCourseClassService.findCurrentSchedule(studentId, semesterId)
         );
+        log.info("Before remove: {}", intervals.size());
         
         intervals.removeIf(i -> i.getCourseClassId().equals(courseClassId));
+
+        log.info("After remove: {}", intervals.size());
 
         cacheHelper.set(cacheKey, intervals, Duration.ofDays(7));
     }

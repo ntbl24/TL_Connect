@@ -19,23 +19,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import lombok.RequiredArgsConstructor;
 
-/**
- * Chứa write transaction của import pipeline trong bean riêng.
- *
- * <p>Tách ra khỏi {@link StudentWriteServiceImpl} để Spring AOP proxy hoạt động đúng
- * với {@code @Transactional} (tránh self-invocation problem).
- *
- * <p>Mỗi lần gọi {@code persistChunk} là 1 transaction độc lập:
- * <ul>
- *   <li>saveAll students → flush (lấy generated IDs)</li>
- *   <li>saveAll contacts / emergency / identity</li>
- *   <li>saveAll studentMajors → flush (lấy generated IDs)</li>
- *   <li>saveAll academicInfo</li>
- *   <li>flush + clear (giải phóng L1 cache)</li>
- * </ul>
- * Nếu chunk thất bại, toàn bộ chunk đó được rollback và các studentCode
- * tương ứng được ghi vào danh sách lỗi ở tầng gọi.
- */
+
 @Service
 @RequiredArgsConstructor
 public class StudentImportPersistService {

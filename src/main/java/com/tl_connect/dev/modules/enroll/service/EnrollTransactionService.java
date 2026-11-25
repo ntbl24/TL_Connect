@@ -1,5 +1,6 @@
 package com.tl_connect.dev.modules.enroll.service;
 
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -7,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.tl_connect.dev.modules.course_class.service.interfaces.CourseClassService;
 import com.tl_connect.dev.modules.enroll.dto.EnrollmentValidationResult;
 import com.tl_connect.dev.modules.enroll.entity.StudentCourseClass;
+import com.tl_connect.dev.modules.enroll.event.EnrollmentCreatedEvent;
 import com.tl_connect.dev.modules.enroll.service.interfaces.StudentCourseClassService;
 import com.tl_connect.dev.shared.common.enums.ResponseStatus;
 import com.tl_connect.dev.shared.common.enums.StudentCourseClassStatus;
@@ -33,14 +35,9 @@ public class EnrollTransactionService {
 
     private final CourseClassService courseClassService;
     private final StudentCourseClassService studentCourseClassService;
+    private final ApplicationEventPublisher eventPublisher;
 
-    /**
-     * Thực thi write transaction ngắn. Nhận kết quả đã validate từ
-     * {@link EnrollmentPreCheckService}, không phát sinh thêm read query nào.
-     *
-     * @return {@link StudentCourseClass} đã được lưu (để lấy semesterId cho event).
-     * @throws ErrorException nếu lớp đã đầy hoặc vi phạm unique constraint.
-     */
+
     @Transactional
     public StudentCourseClass execute(
             Long studentId,
@@ -65,10 +62,22 @@ public class EnrollTransactionService {
         scc.setStatus(StudentCourseClassStatus.PENDING);
         scc.setIsRetake(validation.isRetake());
 
+
+        StudentCourseClass saved;
         try {
-            return studentCourseClassService.save(scc);
+            saved = studentCourseClassService.save(scc);
         } catch (DataIntegrityViolationException e) {
             throw new ErrorException(ResponseStatus.DATABASE_ERROR, "Already enrolled");
         }
+
+        eventPublisher.publishEvent(new EnrollmentCreatedEvent(
+            studentId,
+            courseClassId,
+            saved.getSemesterId(),
+            validation.getOldStatus(),
+            saved.getStatus(),
+            validation.getScheduleIntervals()));
+
+        return saved;
     }
 }

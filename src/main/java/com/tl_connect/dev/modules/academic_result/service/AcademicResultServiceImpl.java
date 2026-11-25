@@ -30,6 +30,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -74,15 +75,20 @@ public class AcademicResultServiceImpl implements AcademicResultService {
 
                 List<AcademicResultAdmDTO> result = new ArrayList<>();
 
-                for (var studentEntry : grouped.entrySet()) {
-                        Long studentId = studentEntry.getKey();
+                for (Student s : students.getContent()) {
+                        Long studentId = s.getId();
 
                         AcademicResultAdmDTO student = new AcademicResultAdmDTO();
                         student.setStudentId(studentId);
+                        student.setStudentCode(s.getStudentCode());
+                        student.setStudentName(s.getFullName());
 
                         List<AcademicResultByStudyProgramDTO> programs = new ArrayList<>();
 
-                        for (var programEntry : studentEntry.getValue().entrySet()) {
+                        Map<String, Map<String, List<SubjectResultAdmRow>>> programMap =
+                                grouped.getOrDefault(studentId, Collections.emptyMap()); 
+                        
+                        for (var programEntry : programMap.entrySet()) {
                                 String studyProgramCode = programEntry.getKey();
 
                                 AcademicResultByStudyProgramDTO program = new AcademicResultByStudyProgramDTO();
@@ -97,32 +103,32 @@ public class AcademicResultServiceImpl implements AcademicResultService {
                                         semester.setSemester(semesterName);
 
                                         List<SubjectResultAdmRow> subjectResults = semesterEntry.getValue();
-                                        List<SubjectResultDTO> subjectResultDTOs = subjectResults.stream().map(s -> {
+                                        List<SubjectResultDTO> subjectResultDTOs = subjectResults.stream().map(row -> {
                                                 return SubjectResultDTO.builder()
-                                                                .id(s.getStudentSubjectResultId())
-                                                                .subjectCode(s.getSubjectCode())
-                                                                .subjectName(s.getSubjectName())
-                                                                .credits(s.getCredits())
-                                                                .attendanceScore(s.getAttendanceScore())
-                                                                .midtermScore(s.getMidtermScore())
-                                                                .finalScore(s.getFinalScore())
-                                                                .score10(s.getScore10())
-                                                                .score4(s.getScore4())
-                                                                .letterGrade(s.getLetterGrade())
-                                                                .isPass(s.getIsPass())
+                                                                .id(row.getStudentSubjectResultId())
+                                                                .subjectCode(row.getSubjectCode())
+                                                                .subjectName(row.getSubjectName())
+                                                                .credits(row.getCredits())
+                                                                .attendanceScore(row.getAttendanceScore())
+                                                                .midtermScore(row.getMidtermScore())
+                                                                .finalScore(row.getFinalScore())
+                                                                .score10(row.getScore10())
+                                                                .score4(row.getScore4())
+                                                                .letterGrade(row.getLetterGrade())
+                                                                .isPass(row.getIsPass())
                                                                 .build();
                                         }).collect(Collectors.toList());
 
-                                        student.setStudentCode(subjectResults.get(0).getStudentCode());
-                                        student.setStudentName(subjectResults.get(0).getStudentName());
-                                        student.setStartYear(subjectResults.get(0).getStartYear());
+                                        SubjectResultAdmRow first = subjectResults.get(0);
+                                        
+                                        student.setStartYear(first.getStartYear());
 
-                                        program.setStudyProgramName(subjectResults.get(0).getStudyProgramName());
-                                        program.setMajorName(subjectResults.get(0).getMajorName());
+                                        program.setStudyProgramName(first.getStudyProgramName());
+                                        program.setMajorName(first.getMajorName());
 
                                         semester.setSubjectResults(subjectResultDTOs);
 
-                                        String key = String.format("%d_%s_%s", studentId, studyProgramCode, semester);
+                                        String key = String.format("%d_%s_%s", studentId, studyProgramCode, semesterName);
                                         SemesterSummaryRow summary = summaryMap.get(key);
 
                                         if (summary != null) {

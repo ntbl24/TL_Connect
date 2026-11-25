@@ -54,7 +54,7 @@ RESTART IDENTITY CASCADE;
 -- oauth_users
 INSERT INTO oauth_users (user_uuid, display_name, email)
 VALUES
-('6befa50a-4dee-49a1-8279-cef09446ea51', 'Lê Việt Hoàng', 'a46049@thanglong.edu.vn'),
+('uuid-1', 'Lê Việt Hoàng', 'a47123@thanglong.edu.vn'),
 ('a65d03d4-6a2a-426f-963d-8dca24399b83', 'Nguyễn Ngọc Anh', 'a45045@thanglong.edu.vn'),
 ('4a43cbd4-f3c6-4f5e-8db3-5b3aa1ef7369', 'Phùng Thanh Độ', 'a45044@thanglong.edu.vn'),
 ('1deb00a9-835c-4ab7-a50f-57c12a56c7bd','Nguyễn Trần Bảo Long','nhokthanh3211@gmail.com'),
